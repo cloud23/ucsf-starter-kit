@@ -1,0 +1,12 @@
+global-css:
+  css:
+    theme:
+      bower_components/slick-carousel/slick/slick.css: {}
+      css/style.css: {}
+  js:
+
+global-js:
+  js:
+    bower_components/jquery/dist/jquery.min.js: {}
+    bower_components/slick-carousel/slick/slick.min.js: {}
+    bower_components/parallax.js/parallax.min.js: {}
