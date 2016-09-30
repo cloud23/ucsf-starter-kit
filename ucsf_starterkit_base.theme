@@ -1,0 +1,70 @@
+<?php
+
+    use Drupal\Core\Form\FormStateInterface;
+    use Drupal\system\Form\ThemeSettingsForm;
+
+    function ucsf_starterkit_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+      
+      $form['ucsf_starterkit_base_settings']['social_icon']['facebook_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Facebook Page URL'),
+        '#default_value' => theme_get_setting('facebook_url'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['social_icon']['twitter_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Twitter Page URL'),
+        '#default_value' => theme_get_setting('twitter_url'),
+      );
+
+      // Custom submit to save the file permenant.
+      $form['#submit'][] = 'ucsf_starterkit_base_settings_form_submit';
+
+      //Copyright
+
+      $form['ucsf_starterkit_base_settings']['copyright']['copyright_text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Enter copyright text'),
+        '#default_value' => theme_get_setting('copyright_text'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['contact']['contact_number'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Contact Number'),
+        '#default_value' => theme_get_setting('contact_number'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['contact']['contact_email'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Email Address'),
+        '#default_value' => theme_get_setting('contact_email'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['tax_id_number'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Tax ID#'),
+        '#default_value' => theme_get_setting('tax_id_number'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['address'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Address'),
+        '#default_value' => theme_get_setting('address'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['footer']['logo'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Footer Logo Location'),
+        '#default_value' => theme_get_setting('footer_logo'),
+      );
+    }
+
+    function ucsf_starterkit_base_preprocess_page(&$variables) {
+      $variables['logo'] = theme_get_setting('logo', 'ucsf_starterkit_base');
+      $variables['footer_logo'] = theme_get_setting('footer_logo', 'ucsf_starterkit_base');
+      $variables['front_page'] = \Drupal::url('<front>');
+      $variables['copyright_text'] = theme_get_setting('copyright_text', 'ucsf_starterkit_base');
+      $variables['contact_number'] = theme_get_setting('contact_number', 'ucsf_starterkit_base');
+      $variables['contact_email'] = theme_get_setting('contact_email', 'ucsf_starterkit_base');
+      $variables['address'] = theme_get_setting('address', 'ucsf_starterkit_base');
+    }
