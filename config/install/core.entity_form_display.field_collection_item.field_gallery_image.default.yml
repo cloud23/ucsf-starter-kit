@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_gallery_image.field_gallery_image_caption
+    - field.field.field_collection_item.field_gallery_image.field_gallery_image_item
+    - field_collection.field_collection.field_gallery_image
+    - image.style.thumbnail
+  module:
+    - image
+    - workbench_moderation
+id: field_collection_item.field_gallery_image.default
+targetEntityType: field_collection_item
+bundle: field_gallery_image
+mode: default
+content:
+  field_gallery_image_caption:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_gallery_image_item:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+hidden: {  }

@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.funds.body
+    - field.field.node.funds.field_gallery_image
+    - field.field.node.funds.field_hero_image
+    - field.field.node.funds.field_quote_text
+    - field.field.node.funds.field_stats
+    - field.field.node.funds.field_teaser
+    - node.type.funds
+  module:
+    - field_collection
+    - image
+    - text
+    - user
+id: node.funds.default
+targetEntityType: node
+bundle: funds
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_gallery_image:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+  field_hero_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_quote_text:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_stats:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_list
+  field_teaser:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+hidden: {  }

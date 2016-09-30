@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_stats.field_stat_text
+    - field.field.field_collection_item.field_stats.field_stat_value
+    - field_collection.field_collection.field_stats
+id: field_collection_item.field_stats.default
+targetEntityType: field_collection_item
+bundle: field_stats
+mode: default
+content:
+  field_stat_text:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_stat_value:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

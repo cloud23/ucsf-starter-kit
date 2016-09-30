@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stories
+    - node.type.funds
+  enforced:
+    theme:
+      - ucsf_starterkit_base
+id: field_stats
+label: field_stats
