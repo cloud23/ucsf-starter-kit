@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stats
+    - node.type.impact_of_giving
+  module:
+    - field_collection
+_core:
+  default_config_hash: 4BerxNmNl_O2C7u3M2v6LbpBs0m14bv4MvtyBm5y3tQ
+id: node.impact_of_giving.field_stats
+field_name: field_stats
+entity_type: node
+bundle: impact_of_giving
+label: Stats
+description: ''
+required: false
+translatable: true
+default_value:
+  - {  }
+  - {  }
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection
