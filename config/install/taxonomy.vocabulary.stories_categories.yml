@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stories
+  enforced:
+    theme:
+      - ucsf_starterkit_base
+name: 'Stories categories'
+vid: stories_categories
+description: 'Contains the categories for article/stories.'
+hierarchy: 0
+weight: 0
