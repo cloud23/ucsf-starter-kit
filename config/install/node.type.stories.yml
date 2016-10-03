@@ -13,8 +13,8 @@ third_party_settings:
     parent: 'main:'
 name: Stories
 type: stories
-description: ''
+description: 'Content type for articles.'
 help: ''
 new_revision: false
-preview_mode: 2
-display_submitted: false
+preview_mode: 0
+display_submitted: true
