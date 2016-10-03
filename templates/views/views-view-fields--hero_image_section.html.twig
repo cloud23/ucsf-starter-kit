@@ -1,0 +1,23 @@
+{% extends "@molecules/02-blocks/01-block-hero.twig" %}
+
+{% block hero_image %}
+    <div class="hero-background" style="background-image: url('{{ fields.field_hero_image.content }}');"></div>
+{% endblock %}
+
+{% block headline %}
+    <h1 class="white-text">{{ fields.field_headline.content }}</h1>  
+{% endblock %}
+
+{% block link_to %}
+    {{ field.field_link_to.content }}
+
+    {{ dump(field.field_link_to) }}
+    <a class="link link--with-icon" href="{# field.field_link_to.content #}">
+        SEE YOUR IMPACT
+        <span class="fa-stack link--icon">
+            <i class="fa fa-circle fa-stack-2x icon--visible-hover icon--circle" aria-hidden="true"></i>
+            <i class="fa fa-circle-thin fa-stack-2x icon--circle" aria-hidden="true"></i>
+            <i class="fa fa-angle-right fa-stack-1x icon--angle" aria-hidden="true"></i>
+        </span>
+    </a>
+{% endblock %}
