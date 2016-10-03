@@ -1,0 +1,111 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.impact_of_giving.body
+    - field.field.node.impact_of_giving.field_category
+    - field.field.node.impact_of_giving.field_hero_image
+    - field.field.node.impact_of_giving.field_link
+    - field.field.node.impact_of_giving.field_related_stories
+    - field.field.node.impact_of_giving.field_stats
+    - node.type.impact_of_giving
+  module:
+    - entity_browser
+    - field_collection
+    - link
+    - path
+    - text
+    - workbench_moderation
+_core:
+  default_config_hash: ftwhWKspo-SeSWp91Pv_hQinvX92iCLmYL-37ZPAwcU
+id: node.impact_of_giving.default
+targetEntityType: node
+bundle: impact_of_giving
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 31
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_category:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_hero_image:
+    type: entity_browser_file
+    weight: 32
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_link:
+    weight: 37
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_related_stories:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_stats:
+    weight: 34
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
