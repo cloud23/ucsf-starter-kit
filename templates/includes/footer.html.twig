@@ -1,0 +1,78 @@
+{% extends "@organisms/00-global/footer.twig" %}
+
+{% block footer_logo %}
+    <img src="{{ footer_logo }}" alt="UCSF" class="footer--logo" />
+{% endblock %}
+
+{% block left_section %}
+    <div class="footer--column-title">THE FOUNDATION</div>
+    <div class="footer--column-content">
+        <p>The UCSF Foundation serves as the giving, receiving, and investing arm of the greater UCSF community and is operated by the Office of Development and Alumni Relations.</p>
+    </div>
+    <div class="footer--column-links">
+        <ul class="list--unstyled">
+            <li><a href="#">UCSF Magazine</a></li>
+            <li><a href="#">UCSF Alumni</a></li>
+        </ul>     
+    </div>
+{% endblock %}
+
+{% block center_section %}
+    <div class="footer--column-title">About</div>
+    <div class="footer--column-links">
+        <ul class="list--unstyled">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Financials</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Give</a></li>
+        </ul>     
+        <ul class="list--unstyled">
+            <li><a href="#">Planned Giving</a></li>
+            <li><a href="#">Corporate &amp; Foundationsu</a></li>
+            <li><a href="#">Employee Giving</a></li>
+        </ul>     
+    </div>  
+{% endblock %}
+
+{% block right_section %}
+    <div class="footer--column-title">The Foundation</div>
+    <div class="footer--column-content text-color--dark-gray">
+        {% block contact_section %}
+        <p>
+            {{ contact_number }}<br />
+            <a href="{{ contact_email }}">{{ contact_email }}</a>
+        </p>
+        {% endblock %}
+
+        {% block address_section %}
+        <p>
+            {{ address }}
+        </p>
+        {% endblock %}
+        {% block tax_number_id %}
+        <p>Tax ID# 94-2829914</p>
+        {% endblock %}
+    </div>
+    <div class="footer--social-links">
+        {% block social_links %}
+            {% if footer.social_links.facebook %}
+                <div class="footer--social-link-item">
+                    <a href="{{ footer.social_links.facebook }}"><i class="fa fa-facebook-official"></i></a>
+                </div>
+            {% endif %}
+            {% if footer.social_links.twitter %}
+                <div class="footer--social-link-item">
+                    <a href="{{ footer.social_links.twitter }}">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block copyright_text %}
+    <div class="footer--copyright-left footer--copyright-text xsmall--visible">
+        {{ copyright_text }}
+    </div>
+{% endblock %}
