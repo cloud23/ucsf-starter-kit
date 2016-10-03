@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_stories
+    - node.type.impact_of_giving
+    - node.type.stories
+id: node.impact_of_giving.field_related_stories
+field_name: field_related_stories
+entity_type: node
+bundle: impact_of_giving
+label: 'Related Stories'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      stories: stories
+    sort:
+      field: title
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
