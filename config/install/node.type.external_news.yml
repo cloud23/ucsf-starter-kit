@@ -11,9 +11,9 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Stories
-type: stories
-description: 'Content type for articles.'
+name: 'External News'
+type: external_news
+description: 'Content type for external news link.'
 help: ''
 new_revision: false
 preview_mode: 0

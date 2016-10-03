@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.funds.body
+    - field.field.node.funds.field_category
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_hero_image
     - field.field.node.funds.field_quote_text
@@ -15,6 +16,8 @@ dependencies:
     - path
     - text
     - workbench_moderation
+_core:
+  default_config_hash: G23MTHo96HGhkrCyHWrszNoGGAtMTgKvZsZ4aHKp4jE
 id: node.funds.default
 targetEntityType: node
 bundle: funds
@@ -33,6 +36,14 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+  field_category:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_gallery_image:
     weight: 10
     settings: {  }

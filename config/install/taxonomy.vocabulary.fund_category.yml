@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.funds
+  enforced:
+    theme:
+      - ucsf_starterkit_base
+name: 'Fund category'
+vid: fund_category
+description: 'Categories for fund content type.'
+hierarchy: 0
+weight: 0

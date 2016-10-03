@@ -1,0 +1,56 @@
+{% extends "@organisms/00-global/header-style-1.twig" %}
+
+{% block upper_menu %}
+    {{ page.topmost_menu }}
+{% endblock %}
+
+{% block search_panel %}
+    <li>
+        <div class="search-box--wrapper">
+            <form action="#" method="GET" name="form-search" id="form-search">
+                <div class="search-field--wrapper">
+                    <span class="placeholder">Search give.ucsf.edu</span>
+                    <input class="input-text" type="text" name="search" id="searchDesktop">
+                    <span class="fa fa-search search-icon"></span>
+                    <a class="hidden anchor" name="search-button" id="search-button">Go</a>
+                </div>
+                <div class="search-advanced-form">
+                    <div class="radio-circle">
+                        <input type="radio" name="search-type" id="search-type-ucsf" value="all">
+                        <div class="radio-ui"><span class="fa fa-check checkmark"></span></div>
+                    </div>
+                    <label for="search-type-ucsf">All UCSF</label>
+                    <div class="radio-circle">
+                        <input type="radio" name="search-type" id="search-type-give" value="give">
+                        <div class="radio-ui"><span class="fa fa-check checkmark"></span></div>
+                    </div>
+                    <label for="search-type-give">give.UCSF.edu</label>
+                    <div class="advanced-form-close-button"></div>
+                </div>
+            </form>
+        </div>
+        <a class="search-advanced-form-toggle">
+            ADVANCED
+        </a>
+    </li>
+{% endblock %}
+
+{% block branding %}
+    {{ page.branding }}
+{% endblock %}
+
+{% block main_navigation %}
+    {{ page.primary_menu }}
+{% endblock %}
+
+{% block mobile_navigation %}
+    {{ page.primary_menu }}
+{% endblock %}
+
+{% block give_button %}
+    <li>
+        <a class="btn btn--with-icon header-give-btn" href="#">
+            Give <span class="fa fa-heart"></span>
+        </a>
+    </li>
+{% endblock %}

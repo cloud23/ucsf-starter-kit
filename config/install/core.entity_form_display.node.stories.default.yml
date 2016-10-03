@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.stories.body
+    - field.field.node.stories.field_category
     - field.field.node.stories.field_gallery_image
     - field.field.node.stories.field_hero_image
     - field.field.node.stories.field_hero_image_caption
@@ -16,6 +17,8 @@ dependencies:
     - path
     - text
     - workbench_moderation
+_core:
+  default_config_hash: Uj48DOfovMN0ASysaDaxcWzYbyMmjEUm5xqiLYJz3kI
 id: node.stories.default
 targetEntityType: node
 bundle: stories
@@ -34,6 +37,14 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_category:
+    weight: 38
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_gallery_image:
     weight: 36
     settings: {  }
