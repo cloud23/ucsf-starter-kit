@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.donate_section_block
+    - field.field.block_content.donate_section_block.body
+    - field.field.block_content.donate_section_block.field_amount
+    - field.field.block_content.donate_section_block.field_background_image
+    - field.field.block_content.donate_section_block.field_other_ways_link
+    - field.field.block_content.donate_section_block.field_post_url
+  module:
+    - image
+    - link
+    - text
+id: block_content.donate_section_block.default
+targetEntityType: block_content
+bundle: donate_section_block
+mode: default
+content:
+  body:
+    label: above
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_amount:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_background_image:
+    weight: 4
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_other_ways_link:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_post_url:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden: {  }
