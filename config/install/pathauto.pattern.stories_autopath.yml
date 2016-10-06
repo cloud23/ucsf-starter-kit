@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: stories_autopath
+label: 'Stories Autopath'
+type: 'canonical_entities:node'
+pattern: '[current-page:title]'
+selection_criteria:
+  66a14b29-5562-4a52-afa3-c5bab7851a9a:
+    id: node_type
+    bundles:
+      stories: stories
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 66a14b29-5562-4a52-afa3-c5bab7851a9a
+selection_logic: and
+weight: -5
+relationships: {  }
