@@ -79,3 +79,27 @@
             $suggestions[] = 'block__block_type__' . $bundle;
         }
     }
+
+    function ucsf_starterkit_base_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+        $current_path = \Drupal::service('path.current')->getPath();
+        $route = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+        $slug = explode("/", $route);
+      
+      if($slug[1] !== "node"){
+        $suggestions[] = 'page__specific__' . $slug[1];
+      }
+      
+      if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $content_type = $node->bundle();
+        if($content_type !== "page"){
+          $suggestions[] = 'page__type__'.$content_type;
+        }
+      }
+    }
+
+    function ucsf_starterkit_base_preprocess_html(&$variables) {
+      $path_class = !$variables['root_path'] ? 'transparent' : '';
+      if (isset($path_class)) {
+        $variables['attributes']['class'][] = $path_class;
+      }
+    }
