@@ -1,0 +1,89 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.stories.body
+    - field.field.node.stories.field_category
+    - field.field.node.stories.field_gallery_image
+    - field.field.node.stories.field_hero_image
+    - field.field.node.stories.field_hero_image_caption
+    - field.field.node.stories.field_quote_text
+    - field.field.node.stories.field_stats
+    - field.field.node.stories.field_sub_title
+    - node.type.stories
+  module:
+    - field_collection
+    - image_url_formatter
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.stories.default
+targetEntityType: node
+bundle: stories
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_category:
+    type: entity_reference_label
+    weight: 1
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_gallery_image:
+    type: field_collection_items
+    weight: 2
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_image:
+    type: image_url
+    weight: 3
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+      url_type: ''
+    third_party_settings: {  }
+  field_hero_image_caption:
+    type: string
+    weight: 4
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_quote_text:
+    type: basic_string
+    weight: 5
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_stats:
+    type: field_collection_items
+    weight: 6
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_sub_title:
+    type: string
+    weight: 7
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -5,6 +5,8 @@ dependencies:
     - field.field.field_collection_item.field_stats.field_stat_text
     - field.field.field_collection_item.field_stats.field_stat_value
     - field_collection.field_collection.field_stats
+_core:
+  default_config_hash: Z06t49rasHmR1yPfdFLG2IJcV5fmOwp6Nq00kTz_h58
 id: field_collection_item.field_stats.default
 targetEntityType: field_collection_item
 bundle: field_stats
