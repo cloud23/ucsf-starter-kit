@@ -67,6 +67,8 @@
       $variables['contact_number'] = theme_get_setting('contact_number', 'ucsf_starterkit_base');
       $variables['contact_email'] = theme_get_setting('contact_email', 'ucsf_starterkit_base');
       $variables['address'] = theme_get_setting('address', 'ucsf_starterkit_base');
+      $variables['facebook_url'] = theme_get_setting('facebook_url', 'ucsf_starterkit_base');
+      $variables['twitter_url'] = theme_get_setting('twitter_url', 'ucsf_starterkit_base');
     }
 
     function ucsf_starterkit_base_theme_suggestions_block_alter(array &$suggestions, array $variables) 
