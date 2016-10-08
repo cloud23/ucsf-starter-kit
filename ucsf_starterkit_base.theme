@@ -103,3 +103,22 @@
         $variables['attributes']['class'][] = $path_class;
       }
     }
+
+    function ucsf_starterkit_base_preprocess_breadcrumb(&$variables){
+        
+        if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+          $variables['breadcrumb'] = array();
+          $variables['breadcrumb'][] = array(
+              'text' => 'Home',
+              'url' => '/'
+            );
+          $variables['breadcrumb'][] = array(
+              'text' => $node->getType(),
+              'url' => '/'
+            );
+          $variables['breadcrumb'][] = array(
+              'text' => $node->getTitle(),
+              'url' => $node->URL()
+          );
+        }
+    }
