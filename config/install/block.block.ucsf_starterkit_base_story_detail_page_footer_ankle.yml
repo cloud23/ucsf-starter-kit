@@ -8,7 +8,7 @@ dependencies:
     - ctools
   theme:
     - ucsf_starterkit_base
-id: storydetailpagefooterankle
+id: ucsf_starterkit_base_story_detail_page_footer_ankle
 theme: ucsf_starterkit_base
 region: footer
 weight: -4

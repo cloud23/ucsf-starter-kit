@@ -8,7 +8,7 @@ dependencies:
     - views
   theme:
     - ucsf_starterkit_base
-id: views_block__related_articles_block_related_articles
+id: ucsf_starterkit_base_views_block__related_articles_block_related_articles
 theme: ucsf_starterkit_base
 region: sidebar_right
 weight: -3
