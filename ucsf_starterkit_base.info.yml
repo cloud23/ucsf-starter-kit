@@ -9,9 +9,10 @@ regions:
   primary_menu : 'Primary Menu'
   content: Content 
   sidebar_right: 'Sidebar Right'
-  footer: Footer
+  footer: 'Footer Ankle'
   topmost_menu: 'Header Menu'
   branding: 'Branding'
+  breadcrumb: 'Breadcrumb'
 
 libraries:
   - ucsf_starterkit_base/global-css
