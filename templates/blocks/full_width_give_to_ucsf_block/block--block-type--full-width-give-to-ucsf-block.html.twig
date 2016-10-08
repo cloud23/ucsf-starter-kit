@@ -1,0 +1,17 @@
+{% extends "@molecules/02-blocks/07-give-block-full-width.twig" %}
+
+{% block content %}
+    {{ content.body['#items'].value | raw}}
+{% endblock %}
+
+{% block button %}
+    {% if content.field_button_style['#items'].value == 0 %}
+        <a class="btn btn--secondary" href="{{ content.field_link_to['#items'].uri }}">
+            {{ content.field_link_to['#items'].title }}
+        </a>
+    {% else %}
+        <a class="btn btn--with-icon" href="{{ content.field_link_to['#items'].uri }}">
+            {{ content.field_link_to['#items'].title }} <i class="fa fa-heart"></i>
+        </a>
+    {% endif %}
+{% endblock %}
