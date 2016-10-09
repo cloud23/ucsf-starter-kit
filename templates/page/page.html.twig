@@ -45,18 +45,49 @@
  * @ingroup themeable
  */
 #}
-{% include directory ~ '/templates/includes/header.html.twig' with {
-    'logo' : logo.url,
-} %}
+{% extends "@pages/_full-width-base-template.twig" %}
+
+{% block header %}
+    {% include directory ~ '/templates/includes/header.html.twig' with {
+        'logo' : logo.url,
+    } %}
+{% endblock %}
 
 {% block content %}
   <div class="contents--wrapper">
-    {% if page.content %}
-      {{ page.content }}
-    {% endif %}
+    {% block top_section %}
+        <div class="content-area">
+            <div class="column-wrapper">
+              <div class="column-large-8 column-medium-8 column-small-12 column-xsmall-12">
+                  {% if node.title.value %}
+                    {% include "@molecules/01-text/00-section-header.twig" with {
+                        "title" : node.title.value
+                    } %}
+                  {% endif %}
+                  {% if node.field_intro_text.value %}
+                    {% include "@molecules/01-text/01-section-intro.twig" with {
+                        "intro_text" : node.field_intro_text.value
+                    } %}
+                  {% endif %}
+              </div>
+            </div>
+        </div>
+    {% endblock %}
+    {% block middle_section %}
+        {% if page.content %}
+          {{ page.content }}
+        {% endif %}
+    {% endblock %}
+    {% block bottom_section %}
+      {% if page.footer %}
+        {{ page.footer }}
+      {% endif %}
+    {% endblock %}
   </div>
 {% endblock %}
 
-{% include directory ~ '/templates/includes/footer.html.twig' with {
-  'logo' : footer_logo
-} %}
+{% block footer %}
+    {% include directory ~ '/templates/includes/footer.html.twig' with {
+      'logo' : footer_logo
+    } %}
+{% endblock%}
