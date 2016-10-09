@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.impact_of_giving.body
+    - field.field.node.impact_of_giving.field_category
+    - field.field.node.impact_of_giving.field_hero_image
+    - field.field.node.impact_of_giving.field_link
+    - field.field.node.impact_of_giving.field_related_stories
+    - field.field.node.impact_of_giving.field_stats
+    - node.type.impact_of_giving
+  module:
+    - field_collection
+    - image_url_formatter
+    - link
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.impact_of_giving.default
+targetEntityType: node
+bundle: impact_of_giving
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_category:
+    type: entity_reference_label
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_hero_image:
+    type: image_url
+    weight: 3
+    label: hidden
+    settings:
+      image_link: ''
+      url_type: ''
+      image_style: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_separate
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_related_stories:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_stats:
+    type: field_collection_editable
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
