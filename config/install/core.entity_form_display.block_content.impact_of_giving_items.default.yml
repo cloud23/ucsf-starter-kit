@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.impact_of_giving_items
+    - field.field.block_content.impact_of_giving_items.field_impact_of_giving_items
+  module:
+    - workbench_moderation
+id: block_content.impact_of_giving_items.default
+targetEntityType: block_content
+bundle: impact_of_giving_items
+mode: default
+content:
+  field_impact_of_giving_items:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
