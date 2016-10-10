@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.stories.field_gallery_image
     - field.field.node.stories.field_hero_image
     - field.field.node.stories.field_hero_image_caption
+    - field.field.node.stories.field_intro_text
     - field.field.node.stories.field_quote_text
     - field.field.node.stories.field_stats
     - field.field.node.stories.field_sub_title
@@ -18,7 +19,7 @@ dependencies:
     - text
     - workbench_moderation
 _core:
-  default_config_hash: Uj48DOfovMN0ASysaDaxcWzYbyMmjEUm5xqiLYJz3kI
+  default_config_hash: n139yTuJYNZYS_p9WToXYg3Au_nSVv3gEwTSfYca0xA
 id: node.stories.default
 targetEntityType: node
 bundle: stories
@@ -26,7 +27,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
@@ -34,11 +35,11 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 12
     settings: {  }
     third_party_settings: {  }
   field_category:
-    weight: 38
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -46,13 +47,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_gallery_image:
-    weight: 36
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
   field_hero_image:
     type: entity_browser_file
-    weight: 33
+    weight: 4
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -63,26 +64,33 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
   field_hero_image_caption:
-    weight: 35
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_intro_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   field_quote_text:
-    weight: 34
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
   field_stats:
-    weight: 37
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
   field_sub_title:
-    weight: 32
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -90,31 +98,29 @@ content:
     type: string_textfield
   path:
     type: path
-    weight: 30
+    weight: 10
     settings: {  }
     third_party_settings: {  }
   promote:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 15
+    type: options_buttons
+    weight: 13
+    settings: {  }
     third_party_settings: {  }
   sticky:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 16
+    type: options_buttons
+    weight: 14
+    settings: {  }
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
-    weight: 5
+    type: entity_reference_autocomplete_tags
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
