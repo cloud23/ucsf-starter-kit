@@ -6,6 +6,8 @@ dependencies:
     - node.type.stories
   module:
     - image
+_core:
+  default_config_hash: mQN3jRvZxyDtzkEBMEAS9CkB17VyJkT5HrdjwmO1uwk
 id: node.stories.field_hero_image
 field_name: field_hero_image
 entity_type: node
@@ -22,9 +24,9 @@ settings:
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: true
-  title_field: true
+  title_field: false
   title_field_required: true
   default_image:
     uuid: ''
