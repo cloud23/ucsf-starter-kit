@@ -4,18 +4,18 @@ dependencies:
   config:
     - field.storage.field_collection_item.field_stat_text
     - field_collection.field_collection.field_stats
-    - node.type.stories
-    - node.type.funds
   enforced:
     theme:
       - ucsf_starterkit_base
+_core:
+  default_config_hash: G-pArtJiwpmM_YG_X0HEqaJnk8be5eyfmLFJLA8TaBg
 id: field_collection_item.field_stats.field_stat_text
 field_name: field_stat_text
 entity_type: field_collection_item
 bundle: field_stats
 label: Description
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
