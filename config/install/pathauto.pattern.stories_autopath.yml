@@ -6,16 +6,16 @@ dependencies:
 id: stories_autopath
 label: 'Stories Autopath'
 type: 'canonical_entities:node'
-pattern: '[current-page:title]'
+pattern: '[node:content-type]/[node:title]'
 selection_criteria:
-  66a14b29-5562-4a52-afa3-c5bab7851a9a:
+  5344314f-b754-4528-a698-ffdbcfe8be22:
     id: node_type
     bundles:
       stories: stories
     negate: false
     context_mapping:
       node: node
-    uuid: 66a14b29-5562-4a52-afa3-c5bab7851a9a
+    uuid: 5344314f-b754-4528-a698-ffdbcfe8be22
 selection_logic: and
 weight: -5
 relationships: {  }
