@@ -5,13 +5,15 @@ dependencies:
     - field.storage.node.field_category
     - node.type.stories
     - taxonomy.vocabulary.stories_categories
+_core:
+  default_config_hash: 5mJyMiCJFuBIS-EC8JJ-QU1WgnYWW4hl6OldkhY4NoM
 id: node.stories.field_category
 field_name: field_category
 entity_type: node
 bundle: stories
 label: Category
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
