@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.stories.field_quote_text
     - field.field.node.stories.field_stats
     - field.field.node.stories.field_sub_title
+    - field.field.node.stories.field_thumbnail
     - node.type.stories
   module:
     - entity_browser
@@ -35,11 +36,11 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
   field_category:
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -47,13 +48,13 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_gallery_image:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
   field_hero_image:
     type: entity_browser_file
-    weight: 4
+    weight: 5
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -64,7 +65,7 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
   field_hero_image_caption:
-    weight: 5
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -78,14 +79,14 @@ content:
     third_party_settings: {  }
     type: text_textarea
   field_quote_text:
-    weight: 6
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
   field_stats:
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
@@ -96,19 +97,31 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_thumbnail:
+    type: entity_browser_file
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
   path:
     type: path
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
   promote:
     type: options_buttons
-    weight: 13
+    weight: 14
     settings: {  }
     third_party_settings: {  }
   sticky:
     type: options_buttons
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
   title:
@@ -120,7 +133,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete_tags
-    weight: 11
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
