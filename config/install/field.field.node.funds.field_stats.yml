@@ -6,15 +6,18 @@ dependencies:
     - node.type.funds
   module:
     - field_collection
+_core:
+  default_config_hash: 6WkiNrJRMR7e61EB_WPByD73LJ_D62JEww9nX3sjzcs
 id: node.funds.field_stats
 field_name: field_stats
 entity_type: node
 bundle: funds
-label: Stats
+label: Facts
 description: ''
 required: false
 translatable: true
 default_value:
+  - {  }
   - {  }
   - {  }
 default_value_callback: ''
