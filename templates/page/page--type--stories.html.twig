@@ -32,12 +32,11 @@
         <div class="oxford-blue-bg photo--caption-full large--hidden medium--hidden">
             <div class="content-area">
                 <div class="column-wrapper">
-                        {% block hero_image_caption %}
-                            {% include "@molecules/01-text/02-photo-caption.twig" with {
-                                'caption' : node.field_hero_image_caption.value
-                            }%}
-                        {% endblock %}
-                    
+                    {% block hero_image_caption %}
+                        {% include "@molecules/01-text/02-photo-caption.twig" with {
+                            'caption' : node.field_hero_image_caption.value
+                        }%}
+                    {% endblock %}
                 </div>
             </div>
         </div>
