@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.funding_priorities_block
+    - field.storage.block_content.field_funding_priorities_items
+    - node.type.funds
+id: block_content.funding_priorities_block.field_funding_priorities_items
+field_name: field_funding_priorities_items
+entity_type: block_content
+bundle: funding_priorities_block
+label: 'Funding Priorities Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      funds: funds
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
