@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.funds.field_category
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_hero_image
-    - field.field.node.funds.field_quote_text
     - field.field.node.funds.field_stats
     - field.field.node.funds.field_teaser
     - field.field.node.funds.field_thumbnail
@@ -65,12 +64,6 @@ content:
       image_link: ''
       url_type: ''
       image_style: ''
-    third_party_settings: {  }
-  field_quote_text:
-    type: basic_string
-    weight: 5
-    label: visually_hidden
-    settings: {  }
     third_party_settings: {  }
   field_stats:
     type: field_collection_items

@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.stories.field_hero_image
     - field.field.node.stories.field_hero_image_caption
     - field.field.node.stories.field_intro_text
-    - field.field.node.stories.field_quote_text
     - field.field.node.stories.field_stats
     - field.field.node.stories.field_sub_title
     - field.field.node.stories.field_thumbnail
@@ -71,12 +70,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_quote_text:
-    type: basic_string
-    weight: 5
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
   field_stats:
     type: field_collection_items
     weight: 6
