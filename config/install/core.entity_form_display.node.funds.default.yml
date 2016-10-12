@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.funds.field_category
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_hero_image
-    - field.field.node.funds.field_quote_text
     - field.field.node.funds.field_stats
     - field.field.node.funds.field_teaser
     - field.field.node.funds.field_thumbnail
@@ -68,13 +67,6 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
-  field_quote_text:
-    weight: 6
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
   field_stats:
     weight: 8
     settings: {  }
