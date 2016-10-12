@@ -1,0 +1,11 @@
+<div class="column-wrapper slider " id="fundingPrioritiesItems">
+    {% for item in items %}
+        {% include "@molecules/02-blocks/00-funding-priorities-item.twig" with {
+            'classes' : "column-large-3 column-medium-4 column-small-6 column-xsmall-12",
+                'image' : file_url(item.content['#node'].field_thumbnail.entity.uri.value),
+                'link_text' : item.content['#node'].title.value,
+                'link_href' : path('entity.node.canonical', {'node': item.content['#node'].nid.value}),
+                'content_text' : item.content['#node'].field_teaser.value
+        } %}
+    {% endfor %}
+</div>
