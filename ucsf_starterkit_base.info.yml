@@ -39,3 +39,5 @@ component-libraries:
     paths:
       - templates/includes
 
+ckeditor_stylesheets:
+  - css/style.css
