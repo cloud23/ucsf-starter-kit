@@ -1,4 +1,5 @@
 {% set color = ['green', 'orange', 'blue'] %}
+
 {% for item in items %}
     <div class="column-wrapper">
         {% include "@molecules/02-blocks/02-impact-stories-block.twig" with {
@@ -6,7 +7,7 @@
             'title' : item.content['#node'].title.value,
             'copy_text' : item.content['#node'].field_sub_title.value, 
             'link' : path('entity.node.canonical', {'node': item.content['#node'].nid.value}),
-            'image_url' :  file_url(item.content['#node'].field_hero_image.entity.fileuri)
+            'image_url' :  file_url(item.content['#node'].field_thumbnail.entity.fileuri)
         } %}
     </div>
 {% endfor %}
