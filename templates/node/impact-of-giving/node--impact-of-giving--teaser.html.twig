@@ -1,7 +1,19 @@
 {% extends "@organisms/01-content-blocks/05-impact-stories-pillar.twig" %}
 
-{% set color = 'teal' %}
 {% set stats = [] %}
+
+{% set colors = ['teal', 'green', 'blue', 'dark-blue'] %}
+
+{% set category = content.field_related_stories['0']['#node'].field_category.entity.name.value %}
+{% if(category == 'Research') %}
+    {% set color = colors[0] %}
+{% elseif(category == 'Education') %}
+    {% set color = colors[1] %}
+{% elseif(category == 'Patient Care') %}
+    {% set color = colors[2] %}
+{% elseif(category == 'News') %}
+    {% set color = colors[3] %}
+{% endif %}
 
 {% for i in content.field_stats %}
     {% set stat_item = {'value' : i['#field_collection_item'].field_stat_value.value, 'text': i['#field_collection_item'].field_stat_text.value } %}
@@ -18,7 +30,7 @@
 
 {% block funding_section %}
     {% include "@molecules/02-blocks/03-funding-priorities-full.twig" with {
-        "color" : 'teal',
+        "color" : color,
         "body_text" : content.body,
         "link_label": content.field_link['#items'].title,
         "link_href" : content.field_link['#items'].uri,
