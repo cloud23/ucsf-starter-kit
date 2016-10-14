@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.stories.field_intro_text
     - field.field.node.stories.field_stats
     - field.field.node.stories.field_sub_title
+    - field.field.node.stories.field_tags
     - field.field.node.stories.field_thumbnail
     - node.type.stories
   module:
@@ -83,6 +84,13 @@ content:
     settings:
       link_to_entity: true
     third_party_settings: {  }
+  field_tags:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_thumbnail:
     weight: 10
     label: above
