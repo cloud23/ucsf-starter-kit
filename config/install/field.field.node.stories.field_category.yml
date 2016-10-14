@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_category
     - node.type.stories
-    - taxonomy.vocabulary.stories_categories
+    - taxonomy.vocabulary.category
 _core:
   default_config_hash: 5mJyMiCJFuBIS-EC8JJ-QU1WgnYWW4hl6OldkhY4NoM
 id: node.stories.field_category
@@ -13,7 +13,7 @@ entity_type: node
 bundle: stories
 label: Category
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -21,9 +21,9 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      stories_categories: stories_categories
+      category: category
     sort:
       field: _none
-    auto_create: true
-    auto_create_bundle: ''
+    auto_create: false
+    auto_create_bundle: category
 field_type: entity_reference
