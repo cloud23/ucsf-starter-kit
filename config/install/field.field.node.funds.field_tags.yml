@@ -2,28 +2,26 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_category
+    - field.storage.node.field_tags
     - node.type.funds
-    - taxonomy.vocabulary.category
-_core:
-  default_config_hash: rT3A9J2apneNtizyPtW_u8wYyZiLFRIRj40f6xYffrg
-id: node.funds.field_category
-field_name: field_category
+    - taxonomy.vocabulary.tags
+id: node.funds.field_tags
+field_name: field_tags
 entity_type: node
 bundle: funds
-label: Category
+label: Tags
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      category: category
+      tags: tags
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: category
+    auto_create_bundle: ''
 field_type: entity_reference

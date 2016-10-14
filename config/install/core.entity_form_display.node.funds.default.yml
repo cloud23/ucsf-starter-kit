@@ -3,11 +3,11 @@ status: true
 dependencies:
   config:
     - field.field.node.funds.body
-    - field.field.node.funds.field_campaign_flag
     - field.field.node.funds.field_category
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_hero_image
     - field.field.node.funds.field_stats
+    - field.field.node.funds.field_tags
     - field.field.node.funds.field_teaser
     - field.field.node.funds.field_thumbnail
     - node.type.funds
@@ -34,24 +34,16 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-  field_campaign_flag:
-    type: options_buttons
     weight: 10
     settings: {  }
     third_party_settings: {  }
   field_category:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 8
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_buttons
   field_gallery_image:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
@@ -68,10 +60,18 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
   field_stats:
-    weight: 8
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
+  field_tags:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
   field_teaser:
     weight: 1
     settings:
@@ -98,12 +98,12 @@ content:
     third_party_settings: {  }
   promote:
     type: options_buttons
-    weight: 12
+    weight: 11
     settings: {  }
     third_party_settings: {  }
   sticky:
     type: options_buttons
-    weight: 13
+    weight: 12
     settings: {  }
     third_party_settings: {  }
   title:
@@ -115,7 +115,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete_tags
-    weight: 14
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60
