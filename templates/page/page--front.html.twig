@@ -9,9 +9,14 @@
 {% block content %}
   <div class="contents--wrapper">
     {% block top_section %}
-        <div class="content-area">
-    
-        </div>
+      {% include "@molecules/02-blocks/01-block-hero.twig" with {
+        "background_image" : file_url(node.field_hero_image.entity.uri.value),
+        "heading" : node.field_headline.value,
+        "alignment" : "right",
+        "body" : "",
+        "link_text" : 'SEE YOUR IMPACT',
+        "link_href" : path('entity.node.canonical', {'node': node.field_link_to.entity.nid.value})
+      } %}
     {% endblock %}
     {% block middle_section %}
         {% if page.content %}

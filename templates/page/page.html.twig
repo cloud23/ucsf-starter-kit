@@ -61,7 +61,7 @@
           "background_image" : file_url(node.field_hero_image.entity.uri.value),
           "heading" : node.title.value,
           "alignment" : "left",
-          "body" : node.field_intro_text.value
+          "body" : node.field_headline.value
         } %}
       {% else %}
         <div class="content-area">
@@ -83,9 +83,13 @@
       {% endif %}
     {% endblock %}
     {% block middle_section %}
-        {% if page.content %}
-          {{ page.content }}
-        {% endif %}
+      {% if page.content %}
+        <div class="content-area">
+          <div class="column-wrapper">
+            {{ page.content }}
+          </div>
+        </div>
+      {% endif %}
     {% endblock %}
     {% block bottom_section %}
       {% if page.footer %}
