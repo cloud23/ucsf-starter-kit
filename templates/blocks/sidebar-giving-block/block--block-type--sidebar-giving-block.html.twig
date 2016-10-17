@@ -1,0 +1,11 @@
+{% extends "@organisms/01-content-blocks/04-ways-to-give-small.twig" %}
+
+{% block label %}
+    <h4>{{ label }}</h4>
+{% endblock %}
+
+{% block post_url %}{{ content.field_post_url['0']['#title'] }}{% endblock %}
+
+{% block amounts %}
+    {{ content.field_amount }}    
+{% endblock %}
