@@ -1,23 +1,29 @@
-
 <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-    {% include "@molecules/02-blocks/09-block-share-icons.twig" %}
+    <div class="column-wrapper">
+        <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+            {% include "@molecules/02-blocks/09-block-share-icons.twig" %}
+        </div>
+        {% if content.field_intro_text  %}
+            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                {{ content.field_intro_text }}
+            </div>
+        {% endif %}
+        {% if node.body.value %}
+            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                {{ node.body.value|raw }}
+            </div>
+        {% endif %}
+        {% if content.field_gallery_image %}
+            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                {{ content.field_gallery_image }}    
+            </div>
+        {% endif %}
+    </div>
 </div>
-
-{% if content.field_intro_text  %}
+{% if content.field_stats %}
     <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-        {{ content.field_intro_text }}
+        <div class="column-wrapper">
+            {# content.field_stats #}
+        </div>
     </div>
 {% endif %}
-
-{% if node.body.value %}
-    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-        {{ node.body.value|raw }}
-    </div>
-{% endif %}
-
-{% if content.field_gallery_image %}
-    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-        {{ content.field_gallery_image }}    
-    </div>
-{% endif %}
-
