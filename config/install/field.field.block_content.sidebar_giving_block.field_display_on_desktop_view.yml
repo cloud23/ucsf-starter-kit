@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sidebar_giving_block
+    - field.storage.block_content.field_display_on_desktop_view
+id: block_content.sidebar_giving_block.field_display_on_desktop_view
+field_name: field_display_on_desktop_view
+entity_type: block_content
+bundle: sidebar_giving_block
+label: 'Display on desktop view'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Display on desktop view'
+  off_label: 'Off'
+field_type: boolean
