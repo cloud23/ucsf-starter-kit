@@ -142,7 +142,7 @@
       else if($node && $variables['breadcrumb'] && $node->getType() == "funds"){
         $variables['breadcrumb'] = array();
         $variables['breadcrumb'][] = array(
-          'text' => $node->getTitle(),
+          'text' => "Back to funds",
           'url' => $node->URL()
         );
       }
