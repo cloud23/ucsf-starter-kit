@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_us_sidebar_block
+    - field.field.block_content.contact_us_sidebar_block.field_contact_email
+    - field.field.block_content.contact_us_sidebar_block.field_contact_number
+    - field.field.block_content.contact_us_sidebar_block.field_department_name
+  module:
+    - telephone
+    - workbench_moderation
+id: block_content.contact_us_sidebar_block.default
+targetEntityType: block_content
+bundle: contact_us_sidebar_block
+mode: default
+content:
+  field_contact_email:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+  field_contact_number:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+  field_department_name:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
