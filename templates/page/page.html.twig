@@ -1,5 +1,11 @@
 {% extends "@pages/_base-page.twig" %}
 
+{% block header %}
+    {% include directory ~ '/templates/includes/header.html.twig' with {
+        'logo' : logo.url,
+    } %}
+{% endblock %}
+
 {% block content %}
     <div class="contents--wrapper">
       {% if node.title.value %}
@@ -44,4 +50,10 @@
         </div>
       </div>
     </div>
+{% endblock %}
+
+{% block footer %}
+    {% include directory ~ '/templates/includes/footer.html.twig' with {
+      'logo' : footer_logo
+    } %}
 {% endblock %}
