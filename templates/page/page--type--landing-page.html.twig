@@ -84,11 +84,7 @@
     {% endblock %}
     {% block middle_section %}
       {% if page.content %}
-        <div class="content-area">
-          <div class="column-wrapper">
-            {{ page.content }}
-          </div>
-        </div>
+        {{ page.content }}
       {% endif %}
     {% endblock %}
     {% block bottom_section %}
