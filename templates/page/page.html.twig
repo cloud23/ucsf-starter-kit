@@ -41,14 +41,14 @@
             </div>
           {% endif %}
         </div>
-        <div class="column-wrapper">
-          {% if page.footer %}
-            <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-              {{ page.footer }}
-            </div>
-          {% endif %}
-        </div>
       </div>
+      {% if page.footer %}
+        <div class="content-area content-area--fluid">
+          <div class="column-wrapper">
+            {{ page.footer }}
+          </div>
+        </div>
+      {% endif %}
     </div>
 {% endblock %}
 
