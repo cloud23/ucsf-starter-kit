@@ -29,8 +29,8 @@
                     'intro_text' : node.field_intro_text.value
                   } %}
                 {% endif %}
-                {% if node.body.value %}
-                  {{ node.body.value | raw }}
+                {% if page.content %}
+                  {{ page.content }}
                 {% endif %}
               </div>
             </div>    
