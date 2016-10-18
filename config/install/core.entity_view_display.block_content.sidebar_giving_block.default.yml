@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sidebar_giving_block
+    - field.field.block_content.sidebar_giving_block.field_amount
+    - field.field.block_content.sidebar_giving_block.field_display_on_desktop_view
+    - field.field.block_content.sidebar_giving_block.field_display_on_mobile_view
+    - field.field.block_content.sidebar_giving_block.field_post_url
+  module:
+    - link
+id: block_content.sidebar_giving_block.default
+targetEntityType: block_content
+bundle: sidebar_giving_block
+mode: default
+content:
+  field_amount:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_display_on_desktop_view:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_display_on_mobile_view:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_post_url:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden: {  }
