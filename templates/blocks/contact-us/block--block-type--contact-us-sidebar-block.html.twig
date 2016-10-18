@@ -1,0 +1,17 @@
+{% extends "@molecules/02-blocks/05-block-contact-us.twig" %}
+
+{% block title %}
+    <h4 class="granjon-heading-text">{{ label }}</h4>
+{% endblock %}
+
+{% block department %}
+    <h5>{{ content.field_department_name['0']['#context'].value }}</h5>
+{% endblock %}
+
+{% block telephone %}
+    {{ content.field_contact_number }}
+{% endblock %}
+
+{% block email %}
+    {{ content.field_contact_email}}
+{% endblock %}
