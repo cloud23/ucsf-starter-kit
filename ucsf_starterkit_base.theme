@@ -100,6 +100,7 @@
         $current_path = \Drupal::service('path.current')->getPath();
         $route = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
         $slug = explode("/", $route);
+        $isFront = \Drupal::service('path.matcher')->isFrontPage();
       
       if($slug[1] !== "node"){
         $suggestions[] = 'page__specific__' . $slug[1];
@@ -107,8 +108,8 @@
       
       if ($node = \Drupal::routeMatch()->getParameter('node')) {
         $content_type = $node->bundle();
-        if($content_type !== "page"){
-          $suggestions[] = 'page__type__'.$content_type;
+        if($content_type !== "page" &&  $isFront != '1'){
+          $suggestions[] = 'page__type__'. $content_type;
         }
       }
     }
