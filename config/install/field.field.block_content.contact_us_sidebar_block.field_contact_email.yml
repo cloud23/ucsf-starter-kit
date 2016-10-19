@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_us_sidebar_block
+    - field.storage.block_content.field_contact_email
+id: block_content.contact_us_sidebar_block.field_contact_email
+field_name: field_contact_email
+entity_type: block_content
+bundle: contact_us_sidebar_block
+label: 'Contact Email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,11 @@
+{% for item in items %}
+    <h4>
+        {{ item.content['#field_collection_item'].field_tcb_title.value }}
+    </h4>
+    <p>
+        {{ item.content['#field_collection_item'].field_tcb_body_text.value }}
+    </p>
+    <a href="{{ item.content['#field_collection_item'].field_tcb_button_link.uri }}" class="btn btn--with-icon anchor">
+        {{ item.content['#field_collection_item'].field_tcb_button_link.title }} <i class="fa fa-heart"></i>
+    </a>
+{% endfor %}

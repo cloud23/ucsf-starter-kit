@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: funding_priorities_block
+label: 'Funding Priorities Block'
+revision: 1
+description: ''

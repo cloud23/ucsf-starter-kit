@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.impact_of_giving_items
+    - field.field.block_content.impact_of_giving_items.field_impact_of_giving_items
+id: block_content.impact_of_giving_items.default
+targetEntityType: block_content
+bundle: impact_of_giving_items
+mode: default
+content:
+  field_impact_of_giving_items:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+hidden: {  }

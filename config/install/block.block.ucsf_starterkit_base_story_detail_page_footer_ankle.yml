@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:full_width_give_to_ucsf_block:02004c9f-6ceb-40cf-a3aa-e7db4913d428'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - ucsf_starterkit_base
+id: ucsf_starterkit_base_story_detail_page_footer_ankle
+theme: ucsf_starterkit_base
+region: footer
+weight: -4
+provider: null
+plugin: 'block_content:02004c9f-6ceb-40cf-a3aa-e7db4913d428'
+settings:
+  id: 'block_content:02004c9f-6ceb-40cf-a3aa-e7db4913d428'
+  label: 'Story Detail Page Footer Ankle'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      stories: stories
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -4,7 +4,9 @@ dependencies:
   config:
     - field.storage.node.field_category
     - node.type.funds
-    - taxonomy.vocabulary.fund_category
+    - taxonomy.vocabulary.category
+_core:
+  default_config_hash: rT3A9J2apneNtizyPtW_u8wYyZiLFRIRj40f6xYffrg
 id: node.funds.field_category
 field_name: field_category
 entity_type: node
@@ -19,9 +21,9 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      fund_category: fund_category
+      category: category
     sort:
       field: _none
-    auto_create: true
-    auto_create_bundle: ''
+    auto_create: false
+    auto_create_bundle: category
 field_type: entity_reference

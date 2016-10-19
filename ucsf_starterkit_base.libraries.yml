@@ -5,7 +5,6 @@ global-css:
       css/style.css: {}
 global-js:
   js:
-    bower_components/jquery/dist/jquery.min.js: {}
     bower_components/parallax.js/parallax.min.js: {}
     bower_components/slick-carousel/slick/slick.min.js: {}
     bower_components/masonry/dist/masonry.pkgd.min.js: {}

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: story_nugget
+label: 'Story Nugget'
+revision: 1
+description: 'For Story Nuggets'

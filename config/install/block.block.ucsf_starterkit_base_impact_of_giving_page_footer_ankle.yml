@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:full_width_give_to_ucsf_block:3c5f9aa5-a1b4-430c-8623-a8066cff5439'
+  module:
+    - block_content
+    - node
+    - system
+  theme:
+    - ucsf_starterkit_base
+id: ucsf_starterkit_base_impact_of_giving_page_footer_ankle
+theme: ucsf_starterkit_base
+region: footer
+weight: -2
+provider: null
+plugin: 'block_content:3c5f9aa5-a1b4-430c-8623-a8066cff5439'
+settings:
+  id: 'block_content:3c5f9aa5-a1b4-430c-8623-a8066cff5439'
+  label: 'Impact of Giving Page Footer Ankle'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /your-giving-has-impact
+    negate: false
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

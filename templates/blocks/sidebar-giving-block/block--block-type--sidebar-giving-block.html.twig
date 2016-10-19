@@ -1,0 +1,19 @@
+{% extends "@organisms/01-content-blocks/04-ways-to-give-small.twig" %}
+
+{% block classes %}
+    {% if (content.field_display_on_desktop_view['#items'].value == 1) and (content.field_display_on_mobile_view['#items'].value == 1) %}
+        visible_always
+    {% elseif content.field_display_on_desktop_view['#items'].value == 1 and  content.field_display_on_mobile_view['#items'].value == 0 %}
+        sidebar
+    {% endif %}    
+{% endblock %}
+
+{% block label %}
+    <h4>{{ label }}</h4>
+{% endblock %}
+
+{% block post_url %}{{ content.field_post_url['0']['#title'] }}{% endblock %}
+
+{% block amounts %}
+    {{ content.field_amount }}    
+{% endblock %}

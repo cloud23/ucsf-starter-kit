@@ -57,6 +57,18 @@
         '#title' => t('Footer Logo Location'),
         '#default_value' => theme_get_setting('footer_logo'),
       );
+
+      $form['ucsf_starterkit_base_settings']['alert_bar'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Alert Bar Message'),
+        '#default_value' => theme_get_setting('alert_bar'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['alert_bar_is_visible'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Is alert bar visible?'),
+        '#default_value' => theme_get_setting('alert_bar_is_visible'),
+      );
     }
 
     function ucsf_starterkit_base_preprocess_page(&$variables) {
@@ -67,6 +79,10 @@
       $variables['contact_number'] = theme_get_setting('contact_number', 'ucsf_starterkit_base');
       $variables['contact_email'] = theme_get_setting('contact_email', 'ucsf_starterkit_base');
       $variables['address'] = theme_get_setting('address', 'ucsf_starterkit_base');
+      $variables['facebook_url'] = theme_get_setting('facebook_url', 'ucsf_starterkit_base');
+      $variables['twitter_url'] = theme_get_setting('twitter_url', 'ucsf_starterkit_base');
+      $variables['alert_bar_is_visible'] = theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
+      $variables['alert_bar'] = theme_get_setting('alert_bar', 'ucsf_starterkit_base');
     }
 
     function ucsf_starterkit_base_theme_suggestions_block_alter(array &$suggestions, array $variables) 
@@ -78,4 +94,62 @@
             $suggestions[] = 'block__' . $blockType . '__' . $bundle;
             $suggestions[] = 'block__block_type__' . $bundle;
         }
+    }
+
+    function ucsf_starterkit_base_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+        $current_path = \Drupal::service('path.current')->getPath();
+        $route = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+        $slug = explode("/", $route);
+      
+      if($slug[1] !== "node"){
+        $suggestions[] = 'page__specific__' . $slug[1];
+      }
+      
+      if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $content_type = $node->bundle();
+        if($content_type !== "page"){
+          $suggestions[] = 'page__type__'.$content_type;
+        }
+      }
+    }
+
+    function ucsf_starterkit_base_preprocess_html(&$variables) {
+      $path_class = !$variables['root_path'] ? 'transparent' : '';
+      if (isset($path_class)) {
+        $variables['attributes']['class'][] = $path_class;
+      }
+    }
+
+    function ucsf_starterkit_base_preprocess_breadcrumb(&$variables){
+      $node = \Drupal::routeMatch()->getParameter('node');
+
+      if($node && $variables['breadcrumb'] && $node->getType() != "funds"){
+        $variables['breadcrumb'] = array();
+        $variables['breadcrumb'][] = array(
+            'text' => 'Home',
+            'url' => '/'
+          );
+        $variables['breadcrumb'][] = array(
+            'text' => $node->getType(),
+            'url' => '/'
+          );
+        $variables['breadcrumb'][] = array(
+            'text' => $node->getTitle(),
+            'url' => $node->URL()
+        );
+      }
+
+      else if($node && $variables['breadcrumb'] && $node->getType() == "funds"){
+        $variables['breadcrumb'] = array();
+        $variables['breadcrumb'][] = array(
+          'text' => "Back to funds",
+          'url' => $node->URL()
+        );
+      }
+    }
+
+    function ucsf_starterkit_base_form_alter(&$form, &$form_state, $form_id){
+      if ($form['#id'] == 'views-exposed-form-articles-archive-stories-archive'){
+        $form['field_category_target_id']['#options']['All'] = 'All';
+      }
     }
