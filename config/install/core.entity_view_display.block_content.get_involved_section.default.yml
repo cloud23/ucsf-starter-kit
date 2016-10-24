@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.get_involved_section
+    - field.field.block_content.get_involved_section.field_items
+  module:
+    - field_collection
+id: block_content.get_involved_section.default
+targetEntityType: block_content
+bundle: get_involved_section
+mode: default
+content:
+  field_items:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_items
+hidden: {  }

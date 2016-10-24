@@ -17,6 +17,14 @@
         "link_text" : 'SEE YOUR IMPACT',
         "link_href" : path('entity.node.canonical', {'node': node.field_link_to.entity.nid.value})
       } %}
+      
+      {% if alert_bar_is_visible %}
+        {% include "@molecules/08-messaging/00-alert.twig" with {
+          'alert' : {
+            'text' : alert_bar
+          }
+        } %}
+      {% endif %}
     {% endblock %}
     {% block middle_section %}
         {% if page.content %}

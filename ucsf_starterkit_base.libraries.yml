@@ -18,3 +18,10 @@ global-js:
     scripts/sliders.js: {}
     scripts/social-icons-behavior-functions.js: {}
     scripts/related-articles-large-functions.js: {}
+    scripts/accordion-functions.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
