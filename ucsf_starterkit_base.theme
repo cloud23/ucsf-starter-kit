@@ -150,7 +150,7 @@
     }
 
     function ucsf_starterkit_base_form_alter(&$form, &$form_state, $form_id){
-      if ($form['#id'] == 'views-exposed-form-articles-archive-stories-archive'){
-        $form['field_category_target_id']['#options']['All'] = 'All';
+      if ($form['#id'] == 'views-exposed-form-article-archives-block'){
+        $form['category']['#options']['All'] = 'All';
       }
     }
