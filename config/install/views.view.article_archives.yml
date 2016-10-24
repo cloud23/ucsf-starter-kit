@@ -6,11 +6,6 @@ dependencies:
     - field.storage.node.field_thumbnail
     - node.type.stories
     - taxonomy.vocabulary.category
-  content:
-    - 'taxonomy_term:category:0a874900-9ee3-4ecb-9716-c947320f87fa'
-    - 'taxonomy_term:category:4db62c67-31d4-4c08-b54a-501242c8cbdc'
-    - 'taxonomy_term:category:764a03e6-64a4-4a18-8bb0-337c080412bb'
-    - 'taxonomy_term:category:cf7aa1fb-a7cc-4db5-b69c-ffd8dda5effb'
   module:
     - image_url_formatter
     - node
@@ -372,11 +367,7 @@ display:
           group_type: group
           admin_label: ''
           operator: or
-          value:
-            41: 41
-            46: 46
-            31: 31
-            36: 36
+          value: {  }
           group: 1
           exposed: true
           expose:
@@ -444,7 +435,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Article Archives'
+      title: 'Article Archive'
       header: {  }
       footer: {  }
       empty: {  }
