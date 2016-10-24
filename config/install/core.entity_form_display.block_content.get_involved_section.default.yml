@@ -1,0 +1,28 @@
+uuid: 6e85787e-f604-4ea9-a99f-0c7fa0dd91ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.get_involved_section
+    - field.field.block_content.get_involved_section.field_items
+  module:
+    - field_collection
+    - workbench_moderation
+id: block_content.get_involved_section.default
+targetEntityType: block_content
+bundle: get_involved_section
+mode: default
+content:
+  field_items:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
