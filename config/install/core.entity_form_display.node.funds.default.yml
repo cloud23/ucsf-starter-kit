@@ -3,9 +3,13 @@ status: true
 dependencies:
   config:
     - field.field.node.funds.body
+    - field.field.node.funds.field_campaign_flag
     - field.field.node.funds.field_category
+    - field.field.node.funds.field_exte
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_hero_image
+    - field.field.node.funds.field_hero_image_caption
+    - field.field.node.funds.field_no_detail_page
     - field.field.node.funds.field_stats
     - field.field.node.funds.field_tags
     - field.field.node.funds.field_teaser
@@ -14,6 +18,7 @@ dependencies:
   module:
     - entity_browser
     - field_collection
+    - link
     - path
     - text
     - workbench_moderation
@@ -34,16 +39,23 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
   field_category:
-    weight: 8
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+  field_exte:
+    weight: 16
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   field_gallery_image:
-    weight: 6
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
@@ -59,13 +71,26 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+  field_hero_image_caption:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_no_detail_page:
+    weight: 15
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_stats:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
   field_tags:
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -98,12 +123,12 @@ content:
     third_party_settings: {  }
   promote:
     type: options_buttons
-    weight: 11
+    weight: 12
     settings: {  }
     third_party_settings: {  }
   sticky:
     type: options_buttons
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
   title:
@@ -115,10 +140,11 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete_tags
-    weight: 13
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_campaign_flag: true
