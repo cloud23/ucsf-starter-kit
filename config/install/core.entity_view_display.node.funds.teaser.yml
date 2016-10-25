@@ -6,9 +6,12 @@ dependencies:
     - field.field.node.funds.body
     - field.field.node.funds.field_campaign_flag
     - field.field.node.funds.field_category
+    - field.field.node.funds.field_giving_form_url
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_hero_image
+    - field.field.node.funds.field_no_detail_page
     - field.field.node.funds.field_stats
+    - field.field.node.funds.field_tags
     - field.field.node.funds.field_teaser
     - field.field.node.funds.field_thumbnail
     - node.type.funds
@@ -47,7 +50,10 @@ hidden:
   body: true
   field_campaign_flag: true
   field_category: true
+  field_exte: true
   field_gallery_image: true
   field_hero_image: true
+  field_no_detail_page: true
   field_stats: true
+  field_tags: true
   links: true
