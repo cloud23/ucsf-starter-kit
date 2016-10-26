@@ -1,0 +1,10 @@
+{% include "@organisms/01-content-blocks/11-ways-to-give-inline.twig" with {
+    url:content.field_post_url['#items'].uri,
+    choice_name : 'GiftChoice',
+    amount: 'Amount',
+    give_ways_content : {
+        small : {
+            heading: label
+        }
+    }
+} %}
