@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.full_width_giving_form
+    - field.field.block_content.full_width_giving_form.field_post_url
+  module:
+    - link
+    - workbench_moderation
+id: block_content.full_width_giving_form.default
+targetEntityType: block_content
+bundle: full_width_giving_form
+mode: default
+content:
+  field_post_url:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
