@@ -1,38 +1,13 @@
-{% extends "@organisms/01-content-blocks/00-ways-to-give.twig" %}
-
-{% block background_image %}{{ file_url(content.field_background_image['#items'].entity.uri.value) }}{% endblock %}
-
-{% block title %}
-    {% if label %}
-        <h3>{{ label }}</h3>
-    {% endif%}
-{% endblock %}
-
-{% block content %}
-    {% if content.body %}
-        {{ content.body }}
-    {% endif%}
-{% endblock %}
-
-{% block form %}
-    <form name="ways-to-give" id="give" method="GET" action="{{ content.field_post_url }}">
-        <div class="ways-to-give-options--wrapper ">
-            {{ content.field_amount }}
-            <div class="ways-to-give-option" role="button">
-                <input type="radio" name="give-value" id="give_value_other" value="other">
-                <div class="others-dollar-label"><span>$</span> <span class="label-text">Others</span></div>
-                <input class="give-value-other-input" type="text" name="give-value-other">
-            </div>
-            <div class="ways-to-give-option submit-btn" role="button">
-               <button class="btn btn--primary" type="submit">Give where it’s needed most</button>
-            </div>
-        </div>
-        <div class="submit-button-small-xsmall--medium--wrapper">
-            <button class="btn btn--primary" type="submit">Give where it’s needed most</button>
-        </div>
-    </form>
-{% endblock %}
-
-{% block section_link %}
-    {{ content.field_other_ways_link }}
-{% endblock %}
+{% include "@organisms/01-content-blocks/00-ways-to-give.twig" with { 
+    "image": file_url(content.field_background_image['#items'].entity.uri.value),
+    "content" : {
+        "label": label,
+        "body": content.body['#items'].value
+    },
+    "choice_name": "GiftChoice",
+    "amount": "Amount",
+    "anchor": {
+        "text" : content.field_other_ways_link['#items'].title,
+        "href" : content.field_other_ways_link['#items'].uri
+    }
+} %}
