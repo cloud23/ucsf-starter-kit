@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.full_width_giving_form
+    - field.storage.block_content.field_post_url
+  module:
+    - link
+id: block_content.full_width_giving_form.field_post_url
+field_name: field_post_url
+entity_type: block_content
+bundle: full_width_giving_form
+label: 'Giving Form URL'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

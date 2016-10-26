@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.full_width_giving_form
+    - field.field.block_content.full_width_giving_form.field_post_url
+  module:
+    - link
+id: block_content.full_width_giving_form.default
+targetEntityType: block_content
+bundle: full_width_giving_form
+mode: default
+content:
+  field_post_url:
+    weight: 0
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden: {  }
