@@ -6,8 +6,8 @@
             {% include '@molecules/02-blocks/17-ways-to-get-involved-item.twig' with {
                 "item_image" : file_url(item.content['#field_collection_item'].field_thumbnail.entity.uri.value),
                 "item_body" : item.content['#field_collection_item'].field_title.value,
-                "item_link_label" : item.content['#field_collection_item'].field_link_text.value,
-                "item_link" : path('entity.node.canonical', {'node': item.content['#field_collection_item'].field_link_to_content.entity.nid.value})
+                "link_text" : item.content['#field_collection_item'].field_link_text.value,
+                "link_href" : path('entity.node.canonical', {'node': item.content['#field_collection_item'].field_link_to_content.entity.nid.value})
             } %}
         </div>
     {% if (loop.index is even or loop.index == loop.length) %}

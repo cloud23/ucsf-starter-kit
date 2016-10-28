@@ -19,6 +19,8 @@ global-js:
     scripts/social-icons-behavior-functions.js: {}
     scripts/related-articles-large-functions.js: {}
     scripts/accordion-functions.js: {}
+    scripts/hero-functions.js: {}
+    scripts/homepage-background-functions.js: {}
   dependencies:
     - core/jquery
     - core/drupal.ajax

@@ -1,0 +1,54 @@
+{% for item in items %}
+    {% set emails = [] %}
+    {% set contact_numbers = [] %}
+    {% set addresses = [] %}
+
+
+    {# kint(item.content['#field_collection_item'].field_contact_number[0]) #}
+
+
+    {% for email in item.content['#field_collection_item'].field_contact_email %}
+        {% set email_item = {'email': email.value} %}
+        {% set emails = emails|merge([email_item]) %}
+    {% endfor %}
+
+    {% for contact_number in item.content['#field_collection_item'].field_contact_number %}
+        {% set contact_number_item = {'number': contact_number.value, 'label': contact_number.value} %}
+        {% set contact_numbers = contact_numbers|merge([contact_number_item]) %}
+    {% endfor %}
+
+    {% for address in item.content['#field_collection_item'].field_address %}
+        {% set address_item = {'address': address.value} %}
+        {% set addresses = addresses|merge([address_item]) %}
+    {% endfor %}
+
+    {% set detail_link = {
+            'label' : item.content['#field_collection_item'].field_link_text.value, 
+            'href': path('entity.node.canonical', {'node': item.content['#field_collection_item'].field_detail_page.entity.nid.value}) 
+        } 
+    %}
+
+    {% set contact_detail = {
+            "contact_body" : item.content['#field_collection_item'].field_contact_text.value,
+            "contact_phone_number": contact_numbers,
+            "contact_email" : emails,
+            "address" : addresses
+        }
+    %}
+
+    {% set story = { 
+        "title" : item.content['#field_collection_item'].field_related_story.entity.title.value,
+        "sub_title" : item.content['#field_collection_item'].field_related_story.entity.field_sub_title.value,
+        "hero_image" : file_url(item.content['#field_collection_item'].field_related_story.entity.field_hero_image.entity.uri.value),
+        "link" :  path('entity.node.canonical', {'node': item.content['#field_collection_item'].field_related_story.entity.nid.value}) 
+    } %}
+
+    {% include "@organisms/01-content-blocks/15-giving-societies-pillar.twig" with {
+        "hero_image" : file_url(item.content['#field_collection_item'].field_background_image.entity.uri.value),
+        "story_title" : item.content['#field_collection_item'].field_teaser_title.value,
+        "copy_text" : item.content['#field_collection_item'].field_teaser_body_text.value,
+        "link" : detail_link,
+        "contact_details" : contact_detail,
+        "story" : story
+    } %}
+{% endfor %}
