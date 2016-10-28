@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.giving_societies_teaser_block
+    - field.storage.block_content.field_giving_society_details
+  module:
+    - field_collection
+id: block_content.giving_societies_teaser_block.field_giving_society_details
+field_name: field_giving_society_details
+entity_type: block_content
+bundle: giving_societies_teaser_block
+label: 'Giving Society Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

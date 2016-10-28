@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.giving_societies_teaser_block
+    - field.field.block_content.giving_societies_teaser_block.field_giving_society_details
+  module:
+    - field_collection
+    - workbench_moderation
+id: block_content.giving_societies_teaser_block.default
+targetEntityType: block_content
+bundle: giving_societies_teaser_block
+mode: default
+content:
+  field_giving_society_details:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_embed
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
