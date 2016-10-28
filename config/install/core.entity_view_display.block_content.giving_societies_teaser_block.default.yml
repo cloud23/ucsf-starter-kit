@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.giving_societies_teaser_block
+    - field.field.block_content.giving_societies_teaser_block.field_giving_society_details
+  module:
+    - field_collection
+id: block_content.giving_societies_teaser_block.default
+targetEntityType: block_content
+bundle: giving_societies_teaser_block
+mode: default
+content:
+  field_giving_society_details:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_items
+hidden: {  }

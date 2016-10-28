@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: giving_societies_teaser_block
+label: 'Giving Societies Teaser Block'
+revision: 1
+description: ''

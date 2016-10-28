@@ -1,0 +1,95 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_giving_society_details.field_address
+    - field.field.field_collection_item.field_giving_society_details.field_background_image
+    - field.field.field_collection_item.field_giving_society_details.field_contact_email
+    - field.field.field_collection_item.field_giving_society_details.field_contact_number
+    - field.field.field_collection_item.field_giving_society_details.field_contact_text
+    - field.field.field_collection_item.field_giving_society_details.field_detail_page
+    - field.field.field_collection_item.field_giving_society_details.field_link_text
+    - field.field.field_collection_item.field_giving_society_details.field_related_story
+    - field.field.field_collection_item.field_giving_society_details.field_teaser_body_text
+    - field.field.field_collection_item.field_giving_society_details.field_teaser_title
+    - field_collection.field_collection.field_giving_society_details
+  module:
+    - lightning_media
+    - telephone
+    - text
+id: field_collection_item.field_giving_society_details.default
+targetEntityType: field_collection_item
+bundle: field_giving_society_details
+mode: default
+content:
+  field_address:
+    weight: 8
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_background_image:
+    weight: 2
+    label: visually_hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image_svg
+  field_contact_email:
+    weight: 6
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_contact_number:
+    weight: 7
+    label: visually_hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+  field_contact_text:
+    weight: 5
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_detail_page:
+    weight: 3
+    label: visually_hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_link_text:
+    weight: 9
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_related_story:
+    weight: 4
+    label: visually_hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_teaser_body_text:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_teaser_title:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }
