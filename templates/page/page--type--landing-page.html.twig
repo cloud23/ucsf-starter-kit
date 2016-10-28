@@ -48,9 +48,11 @@
 {% extends "@pages/_full-width-base-template.twig" %}
 
 {% block header %}
+  <div class="{{ node.field_hero_image.entity.uri.value ? 'transparent' : '' }}">
     {% include directory ~ '/templates/includes/header.html.twig' with {
         'logo' : logo.url,
-    } %}
+    } %}  
+  </div>
 {% endblock %}
 
 {% block content %}
