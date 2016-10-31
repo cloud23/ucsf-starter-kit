@@ -1,0 +1,14 @@
+<div class="featured-events-list" role="list">
+    {% for item in items %}
+        {% set contents = { 
+            'title' : item.content['#node'].title.value,
+            'copy_text' : item.content['#node'].field_teaser.value,
+            'image_url' :  file_url(item.content['#node'].field_thumbnail.entity.uri.value),
+            'link' : (item.content['#node'].field_no_detail_page.value == 1) ? path('entity.node.canonical', {'node': item.content['#node'].nid.value}) : ''
+        } %}
+
+        <div class="featured-event-item">
+            {% include "@molecules/02-blocks/19-featured-event-block.twig" with contents %}
+        </div>
+    {% endfor %}
+</div>
