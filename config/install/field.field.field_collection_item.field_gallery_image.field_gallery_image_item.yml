@@ -4,13 +4,13 @@ dependencies:
   config:
     - field.storage.field_collection_item.field_gallery_image_item
     - field_collection.field_collection.field_gallery_image
-    - node.type.stories
-    - node.type.funds
-  module:
-    - image
   enforced:
     theme:
       - ucsf_starterkit_base
+  module:
+    - image
+_core:
+  default_config_hash: NgbUJxt4NoiCqaRzNJawT2DQ9pMhXbplqduAAwJkzwI
 id: field_collection_item.field_gallery_image.field_gallery_image_item
 field_name: field_gallery_image_item
 entity_type: field_collection_item
