@@ -11,7 +11,9 @@ dependencies:
     - field.field.node.events.field_hero_image
     - field.field.node.events.field_hero_image_caption
     - field.field.node.events.field_intro_text
+    - field.field.node.events.field_no_detail_page
     - field.field.node.events.field_past_events
+    - field.field.node.events.field_teaser
     - field.field.node.events.field_thumbnail
     - node.type.events
   module:
@@ -35,6 +37,22 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_no_detail_page:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_teaser:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
 hidden:
   field_address: true
   field_contact_block_text: true

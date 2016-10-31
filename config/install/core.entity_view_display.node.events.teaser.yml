@@ -12,29 +12,52 @@ dependencies:
     - field.field.node.events.field_hero_image
     - field.field.node.events.field_hero_image_caption
     - field.field.node.events.field_intro_text
+    - field.field.node.events.field_no_detail_page
     - field.field.node.events.field_past_events
+    - field.field.node.events.field_teaser
     - field.field.node.events.field_thumbnail
     - node.type.events
   module:
-    - text
+    - aggregator
+    - image
+    - panelizer
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.events.teaser
 targetEntityType: node
 bundle: events
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
+  field_no_detail_page:
+    type: boolean
+    weight: 2
+    label: above
     settings:
-      trim_length: 600
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-  links:
-    weight: 100
-  workbench_moderation_control:
-    weight: -20
+  field_teaser:
+    type: aggregator_xss
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_thumbnail:
+    type: image
+    weight: 0
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
 hidden:
+  body: true
   field_address: true
   field_contact_block_text: true
   field_contact_email: true
@@ -44,4 +67,5 @@ hidden:
   field_hero_image_caption: true
   field_intro_text: true
   field_past_events: true
-  field_thumbnail: true
+  links: true
+  workbench_moderation_control: true
