@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.events.body
+    - field.field.node.events.field_address
+    - field.field.node.events.field_contact_block_text
+    - field.field.node.events.field_contact_email
+    - field.field.node.events.field_contact_number
+    - field.field.node.events.field_contact_person
+    - field.field.node.events.field_hero_image
+    - field.field.node.events.field_hero_image_caption
+    - field.field.node.events.field_intro_text
+    - field.field.node.events.field_past_events
+    - field.field.node.events.field_thumbnail
+    - node.type.events
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.events.default
+targetEntityType: node
+bundle: events
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_address: true
+  field_contact_block_text: true
+  field_contact_email: true
+  field_contact_number: true
+  field_contact_person: true
+  field_hero_image: true
+  field_hero_image_caption: true
+  field_intro_text: true
+  field_past_events: true
+  field_thumbnail: true
+  links: true
+  workbench_moderation_control: true
