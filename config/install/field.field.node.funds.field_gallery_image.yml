@@ -6,6 +6,8 @@ dependencies:
     - node.type.funds
   module:
     - field_collection
+_core:
+  default_config_hash: hvITXKi4S9gNNMQIYZP_imbLLSdzDPP5nj6xawRY8tA
 id: node.funds.field_gallery_image
 field_name: field_gallery_image
 entity_type: node

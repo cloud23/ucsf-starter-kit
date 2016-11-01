@@ -4,7 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.funds.body
-    - field.field.node.funds.field_category
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_giving_form_url
     - field.field.node.funds.field_hero_image
@@ -70,7 +69,6 @@ content:
     type: image_url
 hidden:
   body: true
-  field_category: true
   field_exte: true
   field_gallery_image: true
   field_hero_image: true

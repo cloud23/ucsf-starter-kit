@@ -1,20 +1,14 @@
 langcode: en
 status: true
 dependencies:
-  enforced:
-    theme:
-      - ucsf_starterkit_base
   module:
-    - link
     - node
-_core:
-  default_config_hash: Lcj6rbh0iQjfIfu1QwwxPbjjRVHzFb2eR-jdDTvkqHM
-id: node.field_link
-field_name: field_link
+id: node.field_display_whats_hot
+field_name: field_display_whats_hot
 entity_type: node
-type: link
+type: boolean
 settings: {  }
-module: link
+module: core
 locked: false
 cardinality: 1
 translatable: true
