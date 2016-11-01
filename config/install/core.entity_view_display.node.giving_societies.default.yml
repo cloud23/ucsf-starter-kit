@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.giving_societies.body
+    - field.field.node.giving_societies.field_gallery_image
+    - field.field.node.giving_societies.field_intro_text
+    - node.type.giving_societies
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.giving_societies.default
+targetEntityType: node
+bundle: giving_societies
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_gallery_image: true
+  field_intro_text: true
+  links: true
+  workbench_moderation_control: true

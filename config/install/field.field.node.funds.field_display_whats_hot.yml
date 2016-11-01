@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_whats_hot
+    - node.type.funds
+id: node.funds.field_display_whats_hot
+field_name: field_display_whats_hot
+entity_type: node
+bundle: funds
+label: 'Display in What''s Hot Section'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Display in What''s Hot Section'
+  off_label: 'Don''t display in What''s Hot Section'
+field_type: boolean

@@ -59,12 +59,13 @@
   <div class="contents--wrapper">
     {% block top_section %}
       {% if node.field_hero_image.value %}
-        {% include "@molecules/02-blocks/13-landing-hero.twig" with { 
-          "background_image" : file_url(node.field_hero_image.entity.uri.value),
+        {% set image = [{ 'background_image' : file_url(node.field_hero_image['0'].entity.uri.value) }] %}
+        {% include "@molecules/02-blocks/13-landing-hero.twig" with {
+          "backgrounds" : image,
           "heading" : node.title.value,
           "alignment" : "left",
           "body" : node.field_headline.value
-        } %}
+        } %}        
       {% else %}
         <div class="content-area">
             <div class="column-wrapper">

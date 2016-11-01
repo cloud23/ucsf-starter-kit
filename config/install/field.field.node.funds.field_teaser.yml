@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_teaser
     - node.type.funds
+_core:
+  default_config_hash: 2sSvaFrjhHS1iRvO64HRyQvK8Mg7HyVvZEts1SeAidI
 id: node.funds.field_teaser
 field_name: field_teaser
 entity_type: node
