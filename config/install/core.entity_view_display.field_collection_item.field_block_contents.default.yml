@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_block_contents.field_intro_text
+    - field.field.field_collection_item.field_block_contents.field_link
+    - field_collection.field_collection.field_block_contents
+  module:
+    - link
+id: field_collection_item.field_block_contents.default
+targetEntityType: field_collection_item
+bundle: field_block_contents
+mode: default
+content:
+  field_intro_text:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden: {  }
