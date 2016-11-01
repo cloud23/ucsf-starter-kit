@@ -2,14 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_giving_form_url
+    - field.storage.node.field_no_detail_page
     - field.storage.node.field_teaser
     - node.type.funds
-    - taxonomy.vocabulary.category
-  content:
-    - 'taxonomy_term:category:4db62c67-31d4-4c08-b54a-501242c8cbdc'
   module:
+    - link
     - node
-    - taxonomy
     - user
 id: what_s_hot
 label: 'What''s Hot'
@@ -196,6 +195,73 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_giving_form_url:
+          id: field_giving_form_url
+          table: node__field_giving_form_url
+          field: field_giving_form_url
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: options
+          type: link
+          settings:
+            trim_length: 80
+            url_only: true
+            url_plain: true
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         path:
           id: path
           table: node
@@ -237,9 +303,9 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: '0'
+          element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -247,6 +313,71 @@ display:
           absolute: false
           entity_type: node
           plugin_id: node_path
+        field_no_detail_page:
+          id: field_no_detail_page
+          table: node__field_no_detail_page
+          field: field_no_detail_page
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: boolean
+          settings:
+            format: boolean
+            format_custom_true: ''
+            format_custom_false: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: true
@@ -299,16 +430,15 @@ display:
           entity_type: node
           entity_field: type
           plugin_id: bundle
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
+        field_display_whats_hot_value:
+          id: field_display_whats_hot_value
+          table: node__field_display_whats_hot
+          field: field_display_whats_hot_value
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
-          value:
-            41: 41
+          operator: '='
+          value: true
           group: 1
           exposed: false
           expose:
@@ -323,7 +453,6 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -336,13 +465,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: category
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
+          plugin_id: boolean
       sorts:
         title:
           id: title
@@ -370,10 +493,11 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_giving_form_url'
+        - 'config:field.storage.node.field_no_detail_page'
         - 'config:field.storage.node.field_teaser'
   block:
     display_plugin: block
@@ -387,8 +511,9 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_giving_form_url'
+        - 'config:field.storage.node.field_no_detail_page'
         - 'config:field.storage.node.field_teaser'
