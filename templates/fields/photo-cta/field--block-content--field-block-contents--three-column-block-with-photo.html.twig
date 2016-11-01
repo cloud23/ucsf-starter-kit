@@ -1,0 +1,7 @@
+{% for item in items %}
+    {% include '@molecules/02-blocks/20-photo-cta-item.twig' with {
+        "text" : item.content['#field_collection_item'].field_intro_text.value,
+        "link_label" : items[0].content['#field_collection_item'].field_link.title,
+        "link_href" : items[0].content['#field_collection_item'].field_link.uri
+    } %}
+{% endfor %}
