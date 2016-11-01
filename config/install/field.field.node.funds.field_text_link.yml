@@ -2,17 +2,15 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_teaser
+    - field.storage.node.field_text_link
     - node.type.funds
-_core:
-  default_config_hash: 2sSvaFrjhHS1iRvO64HRyQvK8Mg7HyVvZEts1SeAidI
-id: node.funds.field_teaser
-field_name: field_teaser
+id: node.funds.field_text_link
+field_name: field_text_link
 entity_type: node
 bundle: funds
-label: Teaser
+label: 'Funding Priorities Block - Link Text'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
