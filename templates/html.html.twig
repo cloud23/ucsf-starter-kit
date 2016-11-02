@@ -35,9 +35,17 @@
   </head>
 
   <body{{ attributes }}>
-    {{ page_top }}
-    {{ page }}
-    {{ page_bottom }}   
+    {%
+      set classes = [
+       'body-content--wrapper',
+        _navigation.is_transparent == 'true'? 'transparent' : '',
+      ]
+    %}
+    <div{{ attributes.addClass(classes) }}>
+      {{ page_top }}
+      {{ page }}
+      {{ page_bottom }}   
+    </div>
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
   </body>
 </html>

@@ -2,6 +2,7 @@
 
     use Drupal\Core\Form\FormStateInterface;
     use Drupal\system\Form\ThemeSettingsForm;
+    use Drupal\Core\Url;
 
     function ucsf_starterkit_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
       
@@ -115,10 +116,19 @@
     }
 
     function ucsf_starterkit_base_preprocess_html(&$variables) {
+      $path = \Drupal::service('path.current')->getPath();
+      $id = \Drupal\Core\Url::fromUserInput($path)->getRouteParameters();
+      $node =  \Drupal\node\Entity\Node::load($id['node']);
+      
+      // if(isset($node->field_hero_image)){
+        $variables['_navigation']['is_transparent'][] = ($node->field_hero_image) ? true : false;
+      // }
+
       $path_class = !$variables['root_path'] ? 'transparent' : '';
       if (isset($path_class)) {
         $variables['attributes']['class'][] = $path_class;
       }
+
     }
 
     function ucsf_starterkit_base_preprocess_breadcrumb(&$variables){
