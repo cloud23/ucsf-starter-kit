@@ -116,13 +116,15 @@
     }
 
     function ucsf_starterkit_base_preprocess_html(&$variables) {
-      $path = \Drupal::service('path.current')->getPath();
-      $id = \Drupal\Core\Url::fromUserInput($path)->getRouteParameters();
-      $node =  \Drupal\node\Entity\Node::load($id['node']);
-      
-      // if(isset($node->field_hero_image)){
-        $variables['_navigation']['is_transparent'][] = ($node->field_hero_image) ? true : false;
-      // }
+      if(isset($variables['node_type'])){
+        $path = \Drupal::service('path.current')->getPath();
+        $id = \Drupal\Core\Url::fromUserInput($path)->getRouteParameters();
+        $node =  \Drupal\node\Entity\Node::load($id['node']);
+        
+        if(isset($node->field_hero_image)){
+          $variables['_navigation']['is_transparent'][] = ($node->field_hero_image) ? true : false;
+        }
+      }
 
       $path_class = !$variables['root_path'] ? 'transparent' : '';
       if (isset($path_class)) {
