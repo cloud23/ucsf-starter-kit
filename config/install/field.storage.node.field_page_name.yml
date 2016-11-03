@@ -3,14 +3,14 @@ status: true
 dependencies:
   module:
     - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base
-id: node.field_campaign_flag
-field_name: field_campaign_flag
+id: node.field_page_name
+field_name: field_page_name
 entity_type: node
-type: boolean
-settings: {  }
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1

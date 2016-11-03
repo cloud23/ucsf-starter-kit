@@ -3,13 +3,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.stories
+    - node.type.page
   module:
     - text
-id: node.stories.body
+_core:
+  default_config_hash: rUop-8b6hvxxDYbv-KobTfNIBNbPY9qOPl8f6kBNSpw
+id: node.page.body
 field_name: body
 entity_type: node
-bundle: stories
+bundle: page
 label: Body
 description: ''
 required: false
