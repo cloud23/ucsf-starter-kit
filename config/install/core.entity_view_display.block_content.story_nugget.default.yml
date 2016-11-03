@@ -9,7 +9,7 @@ dependencies:
     - field.field.block_content.story_nugget.field_story_link
     - field.field.block_content.story_nugget.field_title
   module:
-    - image
+    - image_url_formatter
     - text
 id: block_content.story_nugget.default
 targetEntityType: block_content
@@ -26,10 +26,11 @@ content:
     weight: 1
     label: above
     settings:
+      url_type: '1'
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
   field_caption:
     weight: 3
     label: above

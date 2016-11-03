@@ -22,64 +22,29 @@ third_party_settings:
     displays:
       default:
         blocks:
-          1e0d1857-e690-420b-a974-3942dbdc465b:
-            id: 'views_block:hero_image_section-block_1'
-            label: ''
-            provider: views
+          2ffff6c3-73f9-458a-b966-77c42356c6a1:
+            id: 'block_content:29093b8c-587e-4897-a507-de340984ce26'
+            label: 'Impact of Giving Section'
+            provider: block_content
             label_display: '0'
-            views_label: ''
-            items_per_page: none
+            status: true
+            info: ''
+            view_mode: full
             context_mapping: {  }
             region: middle
-            uuid: 1e0d1857-e690-420b-a974-3942dbdc465b
+            uuid: 2ffff6c3-73f9-458a-b966-77c42356c6a1
             weight: 1
-          ca7a8ce8-9796-40b9-b0f7-2843fdc1b55b:
-            id: 'views_block:priorities_and_campaign-funding_priorities_block'
-            label: 'Explore Priorities & Campaigns'
+          e7dbf772-20a1-41a0-80b1-99a092de166c:
+            id: 'views_block:latest_impact_stories-block'
+            label: 'Impact Stories'
             provider: views
             label_display: visible
-            views_label: 'Explore Priorities & Campaigns'
+            views_label: 'Impact Stories'
             items_per_page: none
             context_mapping: {  }
             region: middle
-            uuid: ca7a8ce8-9796-40b9-b0f7-2843fdc1b55b
+            uuid: e7dbf772-20a1-41a0-80b1-99a092de166c
             weight: 2
-          8ae37cb5-648f-428a-84dd-2e4418c7c0cc:
-            id: 'block_content:74063e53-3eac-44ca-9091-03bc5030dfd5'
-            label: 'Give Where it’s Needed Most'
-            provider: block_content
-            label_display: '0'
-            status: true
-            info: ''
-            view_mode: full
-            context_mapping: {  }
-            region: middle
-            uuid: 8ae37cb5-648f-428a-84dd-2e4418c7c0cc
-            weight: 3
-          6e07998c-4335-4308-b7cc-d8a9268f37fe:
-            id: 'block_content:44e4bf06-fd4d-4213-9920-6bf8e3048384'
-            label: 'Creating Impact'
-            provider: block_content
-            label_display: visible
-            status: true
-            info: ''
-            view_mode: full
-            context_mapping: {  }
-            region: middle
-            uuid: 6e07998c-4335-4308-b7cc-d8a9268f37fe
-            weight: 4
-          ed5a305f-33eb-4dd4-ab30-1beb4f50c7c1:
-            id: 'block_content:3bb035e2-dab9-42bd-a705-aaa79c606e1c'
-            label: 'Home Page Ankle Section'
-            provider: block_content
-            label_display: '0'
-            status: true
-            info: ''
-            view_mode: full
-            context_mapping: {  }
-            region: middle
-            uuid: ed5a305f-33eb-4dd4-ab30-1beb4f50c7c1
-            weight: 5
         id: panels_variant
         uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
         label: 'Single Column'
@@ -120,9 +85,9 @@ third_party_settings:
         pattern: panelizer
         builder: ipe
         static_context: {  }
-      41:
+      191:
         blocks:
-          23f326da-00ca-4f3f-bb41-58ea0a810985:
+          e504f396-0619-47eb-8884-cf0e80864a9d:
             id: 'views_block:hero_image_section-block_1'
             label: ''
             provider: views
@@ -131,9 +96,9 @@ third_party_settings:
             items_per_page: none
             context_mapping: {  }
             region: middle
-            uuid: 23f326da-00ca-4f3f-bb41-58ea0a810985
+            uuid: e504f396-0619-47eb-8884-cf0e80864a9d
             weight: 1
-          d6e3cb09-a333-417d-9cab-24c2480f5b8b:
+          2d3eb9ec-34c7-4af4-8713-24a8daca6565:
             id: 'views_block:priorities_and_campaign-funding_priorities_block'
             label: 'Explore Priorities & Campaigns'
             provider: views
@@ -142,57 +107,10 @@ third_party_settings:
             items_per_page: none
             context_mapping: {  }
             region: middle
-            uuid: d6e3cb09-a333-417d-9cab-24c2480f5b8b
+            uuid: 2d3eb9ec-34c7-4af4-8713-24a8daca6565
             weight: 2
-        id: panels_variant
-        uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
-        label: 'Single Column'
-        weight: 0
-        layout: onecol
-        layout_settings: {  }
-        page_title: '[node:title]'
-        storage_type: panelizer_default
-        storage_id: 'node:landing_page:full:41'
-        pattern: panelizer
-        builder: ipe
-        static_context: {  }
-      45:
-        blocks:
-          23f326da-00ca-4f3f-bb41-58ea0a810985:
-            id: 'views_block:hero_image_section-block_1'
-            label: ''
-            provider: views
-            label_display: '0'
-            views_label: ''
-            items_per_page: none
-            context_mapping: {  }
-            region: middle
-            uuid: 23f326da-00ca-4f3f-bb41-58ea0a810985
-            weight: 2
-          d6e3cb09-a333-417d-9cab-24c2480f5b8b:
-            id: 'views_block:priorities_and_campaign-funding_priorities_block'
-            label: 'Explore Priorities & Campaigns'
-            provider: views
-            label_display: visible
-            views_label: 'Explore Priorities & Campaigns'
-            items_per_page: none
-            context_mapping: {  }
-            region: middle
-            uuid: d6e3cb09-a333-417d-9cab-24c2480f5b8b
-            weight: 3
-          5b81ce05-3b01-42e6-8ab8-ae361869475f:
-            id: 'views_block:donate_section_block-donate_section_block'
-            label: ''
-            provider: views
-            label_display: visible
-            views_label: ''
-            items_per_page: none
-            context_mapping: {  }
-            region: middle
-            uuid: 5b81ce05-3b01-42e6-8ab8-ae361869475f
-            weight: 4
-          0880a400-4939-4f85-984f-814f73150360:
-            id: 'block_content:74063e53-3eac-44ca-9091-03bc5030dfd5'
+          daa9ce83-47f2-4043-8688-b3d8c9a6fe2d:
+            id: 'block_content:e4d49078-0488-441e-8dfc-f2b3f17eb269'
             label: 'Give Where it’s Needed Most'
             provider: block_content
             label_display: visible
@@ -201,8 +119,20 @@ third_party_settings:
             view_mode: full
             context_mapping: {  }
             region: middle
-            uuid: 0880a400-4939-4f85-984f-814f73150360
-            weight: 1
+            uuid: daa9ce83-47f2-4043-8688-b3d8c9a6fe2d
+            weight: 3
+          ba30a782-317a-479c-b6c8-ffe732648e27:
+            id: 'block_content:8b04b153-f07d-4384-965a-f0d8058cbab2'
+            label: 'Creating Impact'
+            provider: block_content
+            label_display: visible
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: ba30a782-317a-479c-b6c8-ffe732648e27
+            weight: 4
         id: panels_variant
         uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
         label: 'Single Column'
@@ -211,34 +141,58 @@ third_party_settings:
         layout_settings: {  }
         page_title: '[node:title]'
         storage_type: panelizer_default
-        storage_id: 'node:landing_page:full:45'
+        storage_id: 'node:landing_page:full:191'
         pattern: panelizer
         builder: ipe
         static_context: {  }
-      68:
+      236:
         blocks:
-          2dd69903-bb05-45ca-aa29-72b8b07b7f2b:
-            id: 'block_content:d22d9ddb-0a18-4b92-b179-67247b90b077'
-            label: 'Impact of Giving 2'
-            provider: block_content
+          e504f396-0619-47eb-8884-cf0e80864a9d:
+            id: 'views_block:hero_image_section-block_1'
+            label: ''
+            provider: views
             label_display: '0'
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+            region: middle
+            uuid: e504f396-0619-47eb-8884-cf0e80864a9d
+            weight: 1
+          daa9ce83-47f2-4043-8688-b3d8c9a6fe2d:
+            id: 'block_content:e4d49078-0488-441e-8dfc-f2b3f17eb269'
+            label: 'Give Where it’s Needed Most'
+            provider: block_content
+            label_display: visible
             status: true
             info: ''
             view_mode: full
             context_mapping: {  }
             region: middle
-            uuid: 2dd69903-bb05-45ca-aa29-72b8b07b7f2b
-            weight: 1
-          8ac0f208-5d35-4708-9816-93a2496ffafb:
-            id: 'views_block:latest_impact_stories-block'
-            label: ''
-            provider: views
+            uuid: daa9ce83-47f2-4043-8688-b3d8c9a6fe2d
+            weight: 3
+          ba30a782-317a-479c-b6c8-ffe732648e27:
+            id: 'block_content:8b04b153-f07d-4384-965a-f0d8058cbab2'
+            label: 'Creating Impact'
+            provider: block_content
             label_display: visible
-            views_label: ''
-            items_per_page: none
+            status: true
+            info: ''
+            view_mode: full
             context_mapping: {  }
             region: middle
-            uuid: 8ac0f208-5d35-4708-9816-93a2496ffafb
+            uuid: ba30a782-317a-479c-b6c8-ffe732648e27
+            weight: 4
+          5f8ac5ce-aacb-4ec6-83f7-07720b93a8ed:
+            id: 'block_content:3dd72210-42a6-4d1a-8270-d4e8971d1b09'
+            label: 'Explore Priorities & Campaigns'
+            provider: block_content
+            label_display: visible
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: 5f8ac5ce-aacb-4ec6-83f7-07720b93a8ed
             weight: 2
         id: panels_variant
         uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
@@ -248,14 +202,113 @@ third_party_settings:
         layout_settings: {  }
         page_title: '[node:title]'
         storage_type: panelizer_default
-        storage_id: 'node:landing_page:full:68'
+        storage_id: 'node:landing_page:full:236'
+        pattern: panelizer
+        builder: ipe
+        static_context: {  }
+      276:
+        blocks:
+          29d0dd0c-bb45-4856-b4f6-73e19e407853:
+            id: 'block_content:3dd72210-42a6-4d1a-8270-d4e8971d1b09'
+            label: 'Explore Priorities & Campaigns'
+            provider: block_content
+            label_display: visible
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: 29d0dd0c-bb45-4856-b4f6-73e19e407853
+            weight: 1
+          1fedd246-2682-4a10-bb1d-8c35b1c52f50:
+            id: 'block_content:e4d49078-0488-441e-8dfc-f2b3f17eb269'
+            label: 'Give Where it’s Needed Most'
+            provider: block_content
+            label_display: visible
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: 1fedd246-2682-4a10-bb1d-8c35b1c52f50
+            weight: 2
+          f120fd92-2dc7-47bb-8909-c152ce10ba92:
+            id: 'block_content:8b04b153-f07d-4384-965a-f0d8058cbab2'
+            label: 'Creating Impact'
+            provider: block_content
+            label_display: visible
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: f120fd92-2dc7-47bb-8909-c152ce10ba92
+            weight: 3
+        id: panels_variant
+        uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
+        label: 'Single Column'
+        weight: 0
+        layout: onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:landing_page:full:276'
+        pattern: panelizer
+        builder: ipe
+        static_context: {  }
+      716:
+        blocks:
+          61fdd685-f412-4362-a93f-528fa9cfa9e4:
+            id: 'views_block:what_s_hot-block'
+            label: ''
+            provider: views
+            label_display: visible
+            views_label: ''
+            items_per_page: '40'
+            context_mapping: {  }
+            region: middle
+            uuid: 61fdd685-f412-4362-a93f-528fa9cfa9e4
+            weight: 3
+          6ada34ae-32bb-45c3-80c8-8c8448c58fe7:
+            id: 'block_content:6c273a33-1e30-48be-bf49-ef4efcacc2e7'
+            label: 'Explore Giving Page Giving Block'
+            provider: block_content
+            label_display: '0'
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: 6ada34ae-32bb-45c3-80c8-8c8448c58fe7
+            weight: 1
+          aea40591-2417-4205-977e-44b1bea679d8:
+            id: 'block_content:3dd72210-42a6-4d1a-8270-d4e8971d1b09'
+            label: 'Explore Priorities & Campaigns'
+            provider: block_content
+            label_display: visible
+            status: true
+            info: ''
+            view_mode: full
+            context_mapping: {  }
+            region: middle
+            uuid: aea40591-2417-4205-977e-44b1bea679d8
+            weight: 2
+        id: panels_variant
+        uuid: 1a312aa0-75a2-4467-8421-33670a7bd039
+        label: 'Single Column'
+        weight: 0
+        layout: onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:landing_page:full:716'
         pattern: panelizer
         builder: ipe
         static_context: {  }
     allow: true
     default: default
 _core:
-  default_config_hash: tmw6dlEJjNvRyQ1sLc4QK2QlUoKb6Kyrig9vNgBjLCA
+  default_config_hash: T3lpwHq8vI4f9T3yfh_TXfwg8DkMLNMf5-RYBeWqd_0
 id: node.landing_page.full
 targetEntityType: node
 bundle: landing_page
