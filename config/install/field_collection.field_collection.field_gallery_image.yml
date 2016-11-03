@@ -1,11 +1,5 @@
 langcode: en
 status: true
-dependencies: 
-  config:
-    - node.type.stories
-    - node.type.funds
-  enforced:
-    theme:
-      - ucsf_starterkit_base
+dependencies: {  }
 id: field_gallery_image
 label: field_gallery_image
