@@ -9,14 +9,6 @@
 # @see \Drupal\bootstrap\Plugin\Form\SystemThemeSettings
 
 # Default features.
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  logo: true
-  name: true
-  node_user_picture: true
-  slogan: true
 facebook_url: 'https://fb.me'
 twitter_url: 'https://twitter.com/'
 copyright_text: '© 2016 University of California San Francisco'
@@ -24,9 +16,9 @@ contact_number: '+1 (415) 476-6922'
 contact_email: 'placeholder@ucsf.org'
 tax_id_number: '94-2829914'
 address: 'UCSF Foundation UCSF Box 0248 San Francisco, CA 94143-0248'
-address: 'UCSF Foundation UCSF Box 0248 San Francisco, CA 94143-0248'
+header_logo: '/themes/custom/ucsf_starterkit_base/logo.svg'
+mobile_logo: '/themes/custom/ucsf_starterkit_base/images/UCSF_logo_white_RGB.svg'
 footer_logo: '/themes/custom/ucsf_starterkit_base/images/UCSF_logobox_white.png'
-logo:
-  path : '/themes/custom/ucsf_starterkit_base/images/UCSF_logobox_navy_CMYK_small.png'
 alert_bar_is_visible: true
 alert_bar: '<b>It’s Giving Tuesday!</b> Click here to make your gift now.'
+alert_bar_link: '/impact-giving'
