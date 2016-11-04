@@ -36,7 +36,10 @@
 {% endblock %}
 
 {% block branding %}
-    {{ page.branding }}
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+        <img class="nav-logo" src="{{ header_logo }}" alt="{{ site_name }}" />
+        <span class="nav-site-title">{{ site_slogan }}</span>
+    </a>
 {% endblock %}
 
 {% block main_navigation %}

@@ -9,7 +9,8 @@
 
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
-        'logo' : logo.url,
+        'logo' : mobile_logo,
+        'logo_box' : header_logo
     } %}
 {% endblock %}
 
@@ -27,7 +28,8 @@
       {% if alert_bar_is_visible %}
         {% include "@molecules/08-messaging/00-alert.twig" with {
           'alert' : {
-            'text' : alert_bar
+            'text' : alert_bar,
+            'href' : alert_bar_link
           }
         } %}
       {% endif %}
