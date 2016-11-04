@@ -24,9 +24,11 @@
     <div class="content-area">
         <div class="column-wrapper">
             <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-                {% block breadcrumbs %}
-                    {% include "@molecules/05-navigation/03-breadcrumb.twig" %}
-                {% endblock %}
+                {% if page.breadcrumb %}
+                    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12"> 
+                        {{ page.breadcrumb }}
+                    </div>
+                {% endif %}
             </div>
             <div class="column-large-8 column-medium-8 column-small-12 column-xsmall-12">
                 {% block title %}

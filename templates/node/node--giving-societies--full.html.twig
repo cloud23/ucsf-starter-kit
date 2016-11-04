@@ -1,0 +1,21 @@
+<div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
+    <div class="column-wrapper">
+        {% if content.field_intro_text  %}
+            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                {% include "@molecules/01-text/01-section-intro.twig" with {
+                    "intro_text" : content.field_intro_text['#items'].value
+                } %}
+            </div>
+        {% endif %}
+        {% if node.body.value %}
+            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                {{ node.body.value|raw }}
+            </div>
+        {% endif %}
+        {% if content.field_gallery_image %}
+            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                {{ content.field_gallery_image }}    
+            </div>
+        {% endif %}
+    </div>
+</div>
