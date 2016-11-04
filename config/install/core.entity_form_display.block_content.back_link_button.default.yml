@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.back_link_button
+    - field.field.block_content.back_link_button.field_back_link
+  module:
+    - link
+    - workbench_moderation
+id: block_content.back_link_button.default
+targetEntityType: block_content
+bundle: back_link_button
+mode: default
+content:
+  field_back_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
