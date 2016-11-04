@@ -2,7 +2,8 @@
 
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
-        'logo' : logo.url,
+        'logo' : mobile_logo,
+        'logo_box' : header_logo
     } %}
 {% endblock %}
 

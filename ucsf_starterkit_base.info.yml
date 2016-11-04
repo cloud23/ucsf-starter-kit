@@ -13,6 +13,13 @@ regions:
   topmost_menu: 'Header Menu'
   branding: 'Branding'
   breadcrumb: 'Breadcrumb'
+  
+features:
+  - comment_user_picture
+  - comment_user_verification
+  - favicon
+  - name
+  - node_user_picture
 
 libraries:
   - ucsf_starterkit_base/global-css
