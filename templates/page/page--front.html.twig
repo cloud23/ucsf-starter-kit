@@ -18,9 +18,9 @@
     {% block top_section %}
       {% include "@molecules/02-blocks/01-block-hero.twig" with {
         "backgrounds" : hero_items,
-        "heading" : node.field_headline.value,
+        "heading" : node.field_page_name.value,
         "alignment" : "right",
-        "body" : "",
+        "body" : node.field_copy_text.value,
         "link_text" : 'SEE YOUR IMPACT',
         "link_href" : path('entity.node.canonical', {'node': node.field_link_to.entity.nid.value})
       } %}
