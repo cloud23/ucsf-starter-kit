@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - block_content.type.contact_us_sidebar_block
+    - field.field.block_content.contact_us_sidebar_block.field_block_heading
+    - field.field.block_content.contact_us_sidebar_block.field_contact_address
     - field.field.block_content.contact_us_sidebar_block.field_contact_email
     - field.field.block_content.contact_us_sidebar_block.field_contact_number
     - field.field.block_content.contact_us_sidebar_block.field_department_name
@@ -14,21 +16,35 @@ targetEntityType: block_content
 bundle: contact_us_sidebar_block
 mode: default
 content:
+  field_block_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_contact_address:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
   field_contact_email:
-    weight: 7
+    weight: 5
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: email_default
   field_contact_number:
-    weight: 8
+    weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
   field_department_name:
-    weight: 6
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -36,7 +52,7 @@ content:
     type: string_textfield
   info:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''

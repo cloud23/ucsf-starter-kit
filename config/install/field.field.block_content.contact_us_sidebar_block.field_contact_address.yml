@@ -3,16 +3,16 @@ status: true
 dependencies:
   config:
     - block_content.type.contact_us_sidebar_block
-    - field.storage.block_content.field_department_name
-id: block_content.contact_us_sidebar_block.field_department_name
-field_name: field_department_name
+    - field.storage.block_content.field_contact_address
+id: block_content.contact_us_sidebar_block.field_contact_address
+field_name: field_contact_address
 entity_type: block_content
 bundle: contact_us_sidebar_block
-label: 'Department Name'
+label: 'Contact Address'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: string_long
