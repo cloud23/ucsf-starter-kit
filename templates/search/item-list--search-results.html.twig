@@ -37,6 +37,8 @@
       {%- endfor -%}
     </{{ wrapper }}>
   {%- else -%}
-    {{- empty -}}
+    <div class="search-result-item">
+        <p class="body-text-medium-20">Sorry no search results were found</p>
+    </div>
   {%- endif -%}
 {%- endif %}
