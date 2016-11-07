@@ -14,7 +14,11 @@
     <li class="big-article">
         {% include "@molecules/02-blocks/12-featured-related-article-image.twig" with {
             "image" : fields.field_thumbnail.content,
-            "text" : fields.title.content
+            "text" : fields.title.content,
+            'link_href' : fields.path.content,
+            'color' : color,
+            'category' : fields.field_category.content,
+            'date' : fields.created.content,
         } %}
     </li>
 {% else %}
