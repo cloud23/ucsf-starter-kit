@@ -1,0 +1,14 @@
+{% set tags = [] %}
+{% set tag_item = {} %}
+
+{% for i in result.node.field_tags %}
+    {% set tag_item = {'tag_link' : '#'  , 'tag_label': i.entity.name.value } %}
+    {% set tags = tags|merge([tag_item]) %}
+{% endfor %}
+
+{% include '@molecules/02-blocks/25-search-result-item.twig' with {
+    "link" : result.link,
+    "label" : result.title,
+    "summary" : result.snippet['#markup'],
+    "tags" : tags
+} %}
