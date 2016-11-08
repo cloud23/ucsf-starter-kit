@@ -111,7 +111,7 @@
       $variables['address'] = theme_get_setting('address', 'ucsf_starterkit_base');
       $variables['facebook_url'] = theme_get_setting('facebook_url', 'ucsf_starterkit_base');
       $variables['twitter_url'] = theme_get_setting('twitter_url', 'ucsf_starterkit_base');
-      $variables['alert_bar_is_visible'] = theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
+      $variables['alert_bar_is_visible'] = (bool)theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
       $variables['alert_bar'] = theme_get_setting('alert_bar', 'ucsf_starterkit_base');
       $variables['alert_bar_link'] = theme_get_setting('alert_bar_link', 'ucsf_starterkit_base');
     }
