@@ -96,6 +96,10 @@
     }
 
     function ucsf_starterkit_base_preprocess_page(&$variables) {
+      $config = \Drupal::config('system.site');
+      $variables['site']['name'] = $config->get('name');
+      $variables['site']['slogan'] = $config->get('slogan');
+
       $variables['logo'] = theme_get_setting('logo', 'ucsf_starterkit_base');
       $variables['footer_logo'] = theme_get_setting('footer_logo', 'ucsf_starterkit_base');
       $variables['header_logo'] = theme_get_setting('header_logo', 'ucsf_starterkit_base');
