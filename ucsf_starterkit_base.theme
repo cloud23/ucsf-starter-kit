@@ -146,10 +146,9 @@
         $path = \Drupal::service('path.current')->getPath();
         $id = \Drupal\Core\Url::fromUserInput($path)->getRouteParameters();
         $node =  \Drupal\node\Entity\Node::load($id['node']);
+        $field_hero_image = count($node->field_hero_image);
 
-
-        $variables['_navigation']['is_transparent'] = ($variables['node_type'] == 'landing_page') ? 'transparent' : 'xtransparent';
-
+        $variables['_navigation']['is_transparent'] = ($field_hero_image > 0) ? 'transparent' : 'xtransparent';
       }
 
       // $path_class = !$variables['root_path'] ? 'transparent' : '';
