@@ -10,7 +10,7 @@ entity_type: block_content
 bundle: contact_us_sidebar_block
 label: 'Department Name'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

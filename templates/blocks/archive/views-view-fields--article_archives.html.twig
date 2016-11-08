@@ -1,4 +1,4 @@
-{% set colors = ['teal', 'green', 'blue', 'dark-blue'] %}
+{% set colors = ['teal', 'green', 'light-blue', 'dark-blue'] %}
 
 {% if(fields.field_category.content == 'Research') %}
     {% set color = colors[0] %}
@@ -14,7 +14,11 @@
     <li class="big-article">
         {% include "@molecules/02-blocks/12-featured-related-article-image.twig" with {
             "image" : fields.field_thumbnail.content,
-            "text" : fields.title.content
+            "text" : fields.title.content,
+            'link_href' : fields.path.content,
+            'color' : color,
+            'category' : fields.field_category.content,
+            'date' : fields.created.content,
         } %}
     </li>
 {% else %}

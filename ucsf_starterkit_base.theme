@@ -1,10 +1,16 @@
 <?php
 
     use Drupal\Core\Form\FormStateInterface;
+    use Drupal\Core\Theme\ThemeSettings;
     use Drupal\system\Form\ThemeSettingsForm;
+    use Drupal\Core\Url;
 
     function ucsf_starterkit_base_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
-      
+
+      if (isset($form_id)) {
+        return;
+      }
+
       $form['ucsf_starterkit_base_settings']['social_icon']['facebook_url'] = array(
         '#type' => 'textfield',
         '#title' => t('Facebook Page URL'),
@@ -18,7 +24,7 @@
       );
 
       // Custom submit to save the file permenant.
-      $form['#submit'][] = 'ucsf_starterkit_base_settings_form_submit';
+      // $form['#submit'][] = 'ucsf_starterkit_base_settings_form_submit';
 
       //Copyright
 
@@ -52,7 +58,19 @@
         '#default_value' => theme_get_setting('address'),
       );
 
-      $form['ucsf_starterkit_base_settings']['footer']['logo'] = array(
+      $form['ucsf_starterkit_base_settings']['header_logo'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Header Logo Location'),
+        '#default_value' => theme_get_setting('header_logo'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['mobile_logo'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Mobile Logo Location'),
+        '#default_value' => theme_get_setting('mobile_logo'),
+      );
+
+      $form['ucsf_starterkit_base_settings']['footer_logo'] = array(
         '#type' => 'textfield',
         '#title' => t('Footer Logo Location'),
         '#default_value' => theme_get_setting('footer_logo'),
@@ -69,11 +87,23 @@
         '#title' => t('Is alert bar visible?'),
         '#default_value' => theme_get_setting('alert_bar_is_visible'),
       );
+
+      $form['ucsf_starterkit_base_settings']['alert_bar_link'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Alert bar link'),
+        '#default_value' => theme_get_setting('alert_bar_link'),
+      );
     }
 
     function ucsf_starterkit_base_preprocess_page(&$variables) {
+      $config = \Drupal::config('system.site');
+      $variables['site']['name'] = $config->get('name');
+      $variables['site']['slogan'] = $config->get('slogan');
+
       $variables['logo'] = theme_get_setting('logo', 'ucsf_starterkit_base');
       $variables['footer_logo'] = theme_get_setting('footer_logo', 'ucsf_starterkit_base');
+      $variables['header_logo'] = theme_get_setting('header_logo', 'ucsf_starterkit_base');
+      $variables['mobile_logo'] = theme_get_setting('mobile_logo', 'ucsf_starterkit_base');
       $variables['front_page'] = \Drupal::url('<front>');
       $variables['copyright_text'] = theme_get_setting('copyright_text', 'ucsf_starterkit_base');
       $variables['contact_number'] = theme_get_setting('contact_number', 'ucsf_starterkit_base');
@@ -83,9 +113,10 @@
       $variables['twitter_url'] = theme_get_setting('twitter_url', 'ucsf_starterkit_base');
       $variables['alert_bar_is_visible'] = theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
       $variables['alert_bar'] = theme_get_setting('alert_bar', 'ucsf_starterkit_base');
+      $variables['alert_bar_link'] = theme_get_setting('alert_bar_link', 'ucsf_starterkit_base');
     }
 
-    function ucsf_starterkit_base_theme_suggestions_block_alter(array &$suggestions, array $variables) 
+    function ucsf_starterkit_base_theme_suggestions_block_alter(array &$suggestions, array $variables)
     {
         $block = $variables['elements'];
         $blockType = $block['#configuration']['provider'];
@@ -101,11 +132,11 @@
         $route = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
         $slug = explode("/", $route);
         $isFront = \Drupal::service('path.matcher')->isFrontPage();
-      
+
       if($slug[1] !== "node"){
         $suggestions[] = 'page__specific__' . $slug[1];
       }
-      
+
       if ($node = \Drupal::routeMatch()->getParameter('node')) {
         $content_type = $node->bundle();
         if($content_type !== "page" &&  $isFront != '1'){
@@ -115,10 +146,21 @@
     }
 
     function ucsf_starterkit_base_preprocess_html(&$variables) {
-      $path_class = !$variables['root_path'] ? 'transparent' : '';
-      if (isset($path_class)) {
-        $variables['attributes']['class'][] = $path_class;
+      if(isset($variables['node_type'])) {
+        $path = \Drupal::service('path.current')->getPath();
+        $id = \Drupal\Core\Url::fromUserInput($path)->getRouteParameters();
+        $node =  \Drupal\node\Entity\Node::load($id['node']);
+
+
+        $variables['_navigation']['is_transparent'] = ($variables['node_type'] == 'landing_page') ? 'transparent' : 'xtransparent';
+
       }
+
+      // $path_class = !$variables['root_path'] ? 'transparent' : '';
+      // if (isset($path_class)) {
+      //   $variables['attributes']['class'][] = $path_class;
+      // }
+
     }
 
     function ucsf_starterkit_base_preprocess_breadcrumb(&$variables){

@@ -4,9 +4,6 @@ dependencies:
   config:
     - field.storage.field_collection_item.field_stat_text
     - field_collection.field_collection.field_stats
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 _core:
   default_config_hash: G-pArtJiwpmM_YG_X0HEqaJnk8be5eyfmLFJLA8TaBg
 id: field_collection_item.field_stats.field_stat_text

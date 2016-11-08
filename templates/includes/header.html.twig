@@ -36,7 +36,10 @@
 {% endblock %}
 
 {% block branding %}
-    {{ page.branding }}
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+        <img class="nav-logo" src="{{ header_logo }}" alt="{{ site_name }}" />
+        <span class="nav-site-title">{{ site_slogan }}</span>
+    </a>
 {% endblock %}
 
 {% block main_navigation %}
@@ -54,3 +57,11 @@
         </a>
     </li>
 {% endblock %}
+
+{% block toggles %}
+    <ul class="nav-mobile-toggles">
+        <li><button class="mobile-search-form-toggle"><span class="visually-hidden">Search giving.ucsf.edu</span><span class="fa fa-search"></span></button></li>
+        <li><button class="mobile-menu-toggle"><span class="visually-hidden">Toggle Menu</span><span class="fa fa-bars"></span></button></li>
+    </ul>
+{% endblock %}
+

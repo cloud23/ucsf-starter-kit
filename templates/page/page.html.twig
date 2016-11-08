@@ -1,55 +1,84 @@
-{% extends "@pages/_base-page.twig" %}
+{% extends "@pages/_full-width-base-template.twig" %}
 
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
-        'logo' : logo.url,
+        'logo' : mobile_logo,
+        'logo_box' : header_logo,
+        'site_slogan' : site.slogan,
+        'site_name': site.name
     } %}
 {% endblock %}
 
 {% block content %}
-    <div class="contents--wrapper">
-      {% if node.title.value %}
+  <div class="contents--wrapper">
+    {% block top_section %}
+      {% if node.field_hero_image.value %}
+        {% set image = [{ 'background_image' : file_url(node.field_hero_image['0'].entity.uri.value) }] %}
+        {% include "@molecules/02-blocks/13-landing-hero.twig" with {
+          "backgrounds" : image,
+          "heading" : node.title.value,
+          "alignment" : "left",
+          "body" : node.field_headline.value
+        } %}        
+      {% else %}
         <div class="content-area">
-            <div class="column-wrapper">
-                <div class=" column-large-8 column-medium-8 column-small-12 column-xsmall-12">
-                    {% include "@molecules/02-blocks/03-block-header-landing-no-photo.twig" with { 
-                      'title' : node.title.value
-                    }%}
-                </div>
-            </div>
-        </div>
-      {% endif%}
-      <div class="content-area">
-        <div class="column-wrapper">
-          <div class="column-large-8 column-medium-8 column-small-12 column-xsmall-12">
-            <div class="column-wrapper">
-              <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-                {% if node.field_intro_text.value %}
-                  {% include "@molecules/01-text/01-section-intro.twig" with {
-                    'intro_text' : node.field_intro_text.value
+          <div class="column-wrapper">
+            <div class="column-large-8 column-medium-8 column-small-12 column-xsmall-12">
+                {% if node.field_page_name.value %}
+                  {% include "@molecules/01-text/00-section-header.twig" with {
+                      "title" : node.field_page_name.value
                   } %}
                 {% endif %}
-                {% if page.content %}
-                  {{ page.content }}
-                {% endif %}
-              </div>
-            </div>    
-          </div>
-          {% if page.sidebar_right %}
-            <div class="column-large-3 column-large-offset-1 column-medium-4 column-small-12 column-xsmall-12">
-                {{ page.sidebar_right }}
             </div>
-          {% endif %}
-        </div>
-      </div>
-      {% if page.footer %}
-        <div class="content-area content-area--fluid">
-          <div class="column-wrapper">
-            {{ page.footer }}
           </div>
         </div>
       {% endif %}
-    </div>
+    {% endblock %}
+
+    {% block middle_section %}
+      <div class="content-area page--content">
+        <div class="column-wrapper">
+            <div class="column-large-9 column-medium-8 column-small-12 column-xsmall-12">
+                <div class="column-wrapper">
+                  {% block left_section %}
+                    {% if node.field_intro_text.value %}
+                      <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                        <div class="title-and-content-group--wrapper">
+                          {% include "@molecules/01-text/01-section-intro.twig" with {
+                            "intro_text" : node.field_intro_text.value
+                          } %}
+                        </div>
+                      </div>
+                    {% endif %}
+                    {% if page.content %}
+                      <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
+                          {{ page.content }}
+                      </div>
+                    {% endif %}
+                  {% endblock %}
+                </div>
+            </div>
+            <div class="column-large-3 column-medium-4 column-small-12 column-xsmall-12">
+                <div class="column-wrapper">
+                    {% block right_section %}
+                      {% if page.sidebar_right %}
+                          <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
+                              {{ page.sidebar_right }}
+                          </div>
+                      {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+      </div>
+    {% endblock %}
+    
+    {% block bottom_section %}
+      {% if page.footer %}
+        {{ page.footer }}
+      {% endif %}
+    {% endblock %}
+  </div>
 {% endblock %}
 
 {% block footer %}

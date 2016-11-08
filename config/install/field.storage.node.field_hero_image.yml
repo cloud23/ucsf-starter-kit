@@ -1,13 +1,15 @@
 langcode: en
 status: true
 dependencies:
+  enforced:
+    theme:
+      - ucsf_starterkit_base
   module:
     - file
     - image
     - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base
+_core:
+  default_config_hash: rRSTgbEL87WYoEbejNbCwihcKYR09CEzemkIIaRgNxA
 id: node.field_hero_image
 field_name: field_hero_image
 entity_type: node
@@ -25,7 +27,7 @@ settings:
   display_default: false
 module: image
 locked: false
-cardinality: 1
+cardinality: 3
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

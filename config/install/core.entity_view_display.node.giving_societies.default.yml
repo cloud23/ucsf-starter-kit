@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.giving_societies.field_intro_text
     - node.type.giving_societies
   module:
+    - field_collection
     - panelizer
     - text
     - user
@@ -27,8 +28,18 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_gallery_image:
+    type: field_collection_items
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_intro_text:
+    type: text_default
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_gallery_image: true
-  field_intro_text: true
   links: true
   workbench_moderation_control: true

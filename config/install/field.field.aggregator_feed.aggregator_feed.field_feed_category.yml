@@ -3,14 +3,14 @@ status: true
 dependencies:
   config:
     - field.storage.aggregator_feed.field_feed_category
-    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.tags
   module:
     - aggregator
 id: aggregator_feed.aggregator_feed.field_feed_category
 field_name: field_feed_category
 entity_type: aggregator_feed
 bundle: aggregator_feed
-label: 'Feed Category'
+label: 'Feed Tags'
 description: ''
 required: true
 translatable: false
@@ -20,9 +20,9 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      category: category
+      tags: tags
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: category
 field_type: entity_reference

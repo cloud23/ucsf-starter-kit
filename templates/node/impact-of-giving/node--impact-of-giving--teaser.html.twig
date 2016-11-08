@@ -2,7 +2,7 @@
 
 {% set stats = [] %}
 
-{% set colors = ['teal', 'green', 'blue', 'dark-blue'] %}
+{% set colors = ['teal', 'green', 'light-blue', 'dark-blue'] %}
 
 {% set category = content.field_related_stories['0']['#node'].field_category.entity.name.value %}
 {% if(category == 'Research') %}
@@ -43,7 +43,7 @@
         "color" : color, 
         "link" : path('entity.node.canonical', {'node': content.field_related_stories['0']['#node'].nid.value}),
         "title" : content.field_related_stories['0']['#node'].title.value,
-        "image_url" : file_url(content.field_related_stories['0']['#node'].field_hero_image.entity.uri.value),
+        "image_url" : file_url(content.field_related_stories['0']['#node'].field_thumbnail.entity.uri.value),
         "copy_text" : content.field_related_stories['0']['#node'].field_sub_title.value
     } %}
 {% endblock %}

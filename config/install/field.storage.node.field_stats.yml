@@ -4,9 +4,6 @@ dependencies:
   module:
     - field_collection
     - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 id: node.field_stats
 field_name: field_stats
 entity_type: node

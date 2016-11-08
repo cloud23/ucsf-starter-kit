@@ -3,12 +3,6 @@ status: true
 dependencies:
   module:
     - field_collection
-  config:
-    - node.type.stories
-    - node.type.funds
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 id: field_collection_item.field_stat_value
 field_name: field_stat_value
 entity_type: field_collection_item

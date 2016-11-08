@@ -48,11 +48,12 @@
 {% extends "@pages/_full-width-base-template.twig" %}
 
 {% block header %}
-  <div class="{{ node.field_hero_image.entity.uri.value ? 'transparent' : '' }}">
     {% include directory ~ '/templates/includes/header.html.twig' with {
-        'logo' : logo.url,
-    } %}  
-  </div>
+        'logo' : mobile_logo,
+        'logo_box' : header_logo,
+        'site_slogan' : site.slogan,
+        'site_name': site.name
+    } %}
 {% endblock %}
 
 {% block content %}
@@ -62,17 +63,17 @@
         {% set image = [{ 'background_image' : file_url(node.field_hero_image['0'].entity.uri.value) }] %}
         {% include "@molecules/02-blocks/13-landing-hero.twig" with {
           "backgrounds" : image,
-          "heading" : node.title.value,
+          "heading" : node.field_page_name.value,
           "alignment" : "left",
-          "body" : node.field_headline.value
+          "body" : node.field_copy_text.value
         } %}        
       {% else %}
         <div class="content-area">
             <div class="column-wrapper">
               <div class="column-large-8 column-medium-8 column-small-12 column-xsmall-12">
-                  {% if node.title.value %}
+                  {% if node.field_page_name.value %}
                     {% include "@molecules/01-text/00-section-header.twig" with {
-                        "title" : node.title.value
+                        "title" : node.field_page_name.value
                     } %}
                   {% endif %}
                   {% if node.field_intro_text.value %}
