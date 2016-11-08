@@ -12,24 +12,37 @@ targetEntityType: aggregator_feed
 bundle: aggregator_feed
 mode: default
 content:
-  field_feed_category:
-    weight: 2
-    label: above
+  checked:
+    type: timestamp_ago
+    weight: 1
     settings:
-      link: true
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
     third_party_settings: {  }
-    type: entity_reference_label
+    label: inline
+  description:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  feed_icon:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  image:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
   items:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-  more_link:
-    weight: 1
+  link:
+    type: uri_link
+    weight: 4
     settings: {  }
     third_party_settings: {  }
+    label: inline
 hidden:
-  checked: true
-  description: true
-  feed_icon: true
-  image: true
-  link: true
+  field_feed_category: true
+  more_link: true
