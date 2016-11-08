@@ -3,7 +3,9 @@
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
         'logo' : mobile_logo,
-        'logo_box' : header_logo
+        'logo_box' : header_logo,
+        'site_slogan' : site.slogan,
+        'site_name': site.name
     } %}
 {% endblock %}
 
@@ -61,11 +63,12 @@
             {{ block('hero_image_caption') }}
         </div>
     {% endif %}
-    {% if page.sidebar_right %}
+    {# if page.sidebar_right#}
         <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
             {{ page.sidebar_right }}
+            {{ drupal_view('news_discoveries_sidebar', 'block', node.field_tags.target_id) }}
         </div>
-    {% endif %}
+    {# endif #}
 {% endblock %}
 
 {% block bottom_section %}
