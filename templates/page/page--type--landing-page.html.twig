@@ -50,7 +50,9 @@
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
         'logo' : mobile_logo,
-        'logo_box' : header_logo
+        'logo_box' : header_logo,
+        'site_slogan' : site.slogan,
+        'site_name': site.name
     } %}
 {% endblock %}
 

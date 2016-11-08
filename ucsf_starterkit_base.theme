@@ -96,6 +96,10 @@
     }
 
     function ucsf_starterkit_base_preprocess_page(&$variables) {
+      $config = \Drupal::config('system.site');
+      $variables['site']['name'] = $config->get('name');
+      $variables['site']['slogan'] = $config->get('slogan');
+
       $variables['logo'] = theme_get_setting('logo', 'ucsf_starterkit_base');
       $variables['footer_logo'] = theme_get_setting('footer_logo', 'ucsf_starterkit_base');
       $variables['header_logo'] = theme_get_setting('header_logo', 'ucsf_starterkit_base');
@@ -107,7 +111,7 @@
       $variables['address'] = theme_get_setting('address', 'ucsf_starterkit_base');
       $variables['facebook_url'] = theme_get_setting('facebook_url', 'ucsf_starterkit_base');
       $variables['twitter_url'] = theme_get_setting('twitter_url', 'ucsf_starterkit_base');
-      $variables['alert_bar_is_visible'] = theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
+      $variables['alert_bar_is_visible'] = (bool)theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
       $variables['alert_bar'] = theme_get_setting('alert_bar', 'ucsf_starterkit_base');
       $variables['alert_bar_link'] = theme_get_setting('alert_bar_link', 'ucsf_starterkit_base');
     }
