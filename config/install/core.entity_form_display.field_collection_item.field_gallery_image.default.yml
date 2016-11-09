@@ -2,30 +2,38 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.field_collection_item.field_gallery_image.field_caption
     - field.field.field_collection_item.field_gallery_image.field_gallery_image_caption
     - field.field.field_collection_item.field_gallery_image.field_gallery_image_item
     - field_collection.field_collection.field_gallery_image
-    - image.style.thumbnail
   module:
-    - image
+    - entity_browser
     - workbench_moderation
+_core:
+  default_config_hash: Iy_x1ZNvt483Bq6unUh4bzt5XOZev2qy_0e7aJGn7XU
 id: field_collection_item.field_gallery_image.default
 targetEntityType: field_collection_item
 bundle: field_gallery_image
 mode: default
 content:
-  field_gallery_image_caption:
-    weight: 7
+  field_caption:
+    weight: 1
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: string_textarea
   field_gallery_image_item:
-    weight: 6
+    weight: 0
     settings:
-      progress_indicator: throbber
+      entity_browser: image_browser
+      field_widget_edit: '1'
+      field_widget_remove: '1'
+      selection_mode: selection_append
+      view_mode: default
+      open: 0
       preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_image
-hidden: {  }
+    type: entity_browser_file
+hidden:
+  field_gallery_image_caption: true
