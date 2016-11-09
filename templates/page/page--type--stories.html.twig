@@ -53,7 +53,9 @@
 
 {% block left_section %}
     {% if page.content %}
-        {{ page.content }}
+        <div class="block--wysiwyg">
+            {{ page.content }}
+        </div>
     {% endif %}
 {% endblock %}
 
