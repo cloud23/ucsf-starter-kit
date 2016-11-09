@@ -11,7 +11,7 @@ dependencies:
     - node
     - user
 id: what_s_hot
-label: 'What''s Hot'
+label: 'Schools and Graduate Programs'
 module: views
 description: ''
 tag: ''
@@ -246,7 +246,7 @@ display:
           click_sort_column: options
           type: link
           settings:
-            trim_length: 80
+            trim_length: null
             url_only: true
             url_plain: true
             rel: '0'
@@ -481,7 +481,7 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: standard
-      title: 'What''s Hot'
+      title: 'Schools and Graduate Programs'
       header: {  }
       footer: {  }
       empty: {  }
