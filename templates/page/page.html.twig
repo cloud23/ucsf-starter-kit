@@ -19,7 +19,7 @@
           "heading" : node.title.value,
           "alignment" : "left",
           "body" : node.field_headline.value
-        } %}        
+        } %}
       {% else %}
         <div class="content-area">
           <div class="column-wrapper">
@@ -52,7 +52,9 @@
                     {% endif %}
                     {% if page.content %}
                       <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
-                          {{ page.content }}
+                          <div class="block--wysiwyg">
+                            {{ page.content }}
+                          </div>
                       </div>
                     {% endif %}
                   {% endblock %}
@@ -72,7 +74,7 @@
         </div>
       </div>
     {% endblock %}
-    
+
     {% block bottom_section %}
       {% if page.footer %}
         {{ page.footer }}
