@@ -1,9 +1,6 @@
 langcode: en
 status: true
 dependencies:
-  enforced:
-    theme:
-      - ucsf_starterkit_base
   module:
     - menu_ui
     - workbench_moderation

@@ -4,9 +4,6 @@ dependencies:
   config:
     - field.storage.field_collection_item.field_gallery_image_item
     - field_collection.field_collection.field_gallery_image
-  enforced:
-    theme:
-      - ucsf_starterkit_base
   module:
     - image
 _core:

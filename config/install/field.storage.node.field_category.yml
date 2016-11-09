@@ -4,9 +4,6 @@ dependencies:
   module:
     - node
     - taxonomy
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 id: node.field_category
 field_name: field_category
 entity_type: node
