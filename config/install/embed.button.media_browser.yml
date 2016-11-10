@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:4533020c-41a5-4f16-ba1c-30496a373f53'
+  module:
+    - entity_embed
+    - media_entity
+_core:
+  default_config_hash: ie5GqfaWnES2_xic2Gwr6V0_1hP6tmZ7qFIz3VcmWNc
+label: 'Media Browser'
+id: media_browser
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles: {  }
+  display_plugins:
+    - 'entity_reference:media_thumbnail'
+  entity_browser: media_browser
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 4533020c-41a5-4f16-ba1c-30496a373f53
