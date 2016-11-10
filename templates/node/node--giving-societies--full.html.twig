@@ -14,7 +14,14 @@
         {% endif %}
         {% if content.field_gallery_image %}
             <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
-                {{ content.field_gallery_image }}    
+                <div class="carousel-with-header">
+                    {% if node.field_gallery_header_text.value %}
+                        {% include '@molecules/01-text/09-carousel-header.twig' with {
+                            "header_text" : node.field_gallery_header_text.value
+                        } %}
+                    {% endif %}
+                    {{ content.field_gallery_image }}
+                </div>
             </div>
         {% endif %}
     </div>
