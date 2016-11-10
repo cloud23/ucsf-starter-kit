@@ -4,7 +4,7 @@
   <div class="content-area">
     <div class="column-wrapper">
         {% if page.breadcrumb %}
-          <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12"> 
+          <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
             {{ page.breadcrumb }}
           </div>
         {% endif %}
@@ -17,4 +17,12 @@
         {% endif %}
     </div>
   </div>
+{% endblock %}
+
+{% block left_section %}
+    {% if page.content %}
+        <div class="block--wysiwyg">
+            {{ page.content }}
+        </div>
+    {% endif %}
 {% endblock %}
