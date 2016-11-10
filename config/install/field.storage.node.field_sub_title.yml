@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 id: node.field_sub_title
 field_name: field_sub_title
 entity_type: node

@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 id: node.field_hero_image_caption
 field_name: field_hero_image_caption
 entity_type: node
