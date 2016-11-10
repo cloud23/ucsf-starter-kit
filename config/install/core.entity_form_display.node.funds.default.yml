@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.funds.field_category
     - field.field.node.funds.field_display_whats_hot
     - field.field.node.funds.field_gallery_image
+    - field.field.node.funds.field_gift_choice_amount
+    - field.field.node.funds.field_giving_form_default_value
     - field.field.node.funds.field_giving_form_url
     - field.field.node.funds.field_hero_image
     - field.field.node.funds.field_hero_image_caption
@@ -76,6 +78,8 @@ third_party_settings:
       children:
         - field_microform_text
         - field_giving_form_url
+        - field_gift_choice_amount
+        - field_giving_form_default_value
         - field_no_detail_page
       parent_name: ''
       weight: 2
@@ -124,6 +128,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
+  field_gift_choice_amount:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_giving_form_default_value:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_giving_form_url:
     type: link_default
     weight: 27
@@ -165,7 +180,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_no_detail_page:
-    weight: 28
+    weight: 30
     settings:
       display_label: true
     third_party_settings: {  }
