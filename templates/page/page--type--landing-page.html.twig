@@ -87,8 +87,20 @@
       {% endif %}
     {% endblock %}
     {% block middle_section %}
-      {% if page.content %}
-        {{ page.content }}
+      {% if node.field_page_display.value == "0" %}
+        {% if node.body.value is not empty %}
+          <div class="content-area page-body">
+            <div class="column-wrapper">
+              <div class="column-xsmall-12 column-small-12 column-medium-12 column-large-12">
+                {{ node.body.value | raw }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% else %}
+        {% if page.content %}
+          {{ page.content }}
+        {% endif %}
       {% endif %}
     {% endblock %}
     {% block bottom_section %}

@@ -3,15 +3,14 @@ status: true
 dependencies:
   module:
     - node
-    - telephone
-id: node.field_contact_number
-field_name: field_contact_number
+id: node.field_page_display
+field_name: field_page_display
 entity_type: node
-type: telephone
+type: boolean
 settings: {  }
-module: telephone
+module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
