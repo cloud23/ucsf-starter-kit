@@ -47,7 +47,7 @@
     {% endif %}
     {% block microform %}
         {% if node.field_giving_form_url.uri %}
-            <div class="column-large-12 column-medium-12 small--hidden xsmall--hidden photo--caption-side">
+            <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
                 {% set giving_amounts = [] %}
                 {% set prefix = node.field_gift_choice_amount.itemDefinition.settings.prefix %}
 
@@ -68,7 +68,7 @@
                 {% endif %}
 
                 {% include "@organisms/01-content-blocks/04-ways-to-give-small.twig" with {
-                    "class_controller" : "sidebar",
+                    "class_controller" : "visible_always funds_side",
                     "label": node.field_microform_text.value,
                     "post_url" : node.field_giving_form_url.uri,
                     "choice_name": "GiftChoice",
