@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.field_collection_item.field_items.field_link
     - field.field.field_collection_item.field_items.field_link_text
     - field.field.field_collection_item.field_items.field_link_to_content
     - field.field.field_collection_item.field_items.field_thumbnail
@@ -9,12 +10,20 @@ dependencies:
     - field_collection.field_collection.field_items
   module:
     - entity_browser
+    - link
     - workbench_moderation
 id: field_collection_item.field_items.default
 targetEntityType: field_collection_item
 bundle: field_items
 mode: default
 content:
+  field_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
   field_link_text:
     weight: 1
     settings:
@@ -22,14 +31,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_link_to_content:
-    weight: 3
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
   field_thumbnail:
     type: entity_browser_file
     weight: 2
@@ -49,4 +50,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-hidden: {  }
+hidden:
+  field_link_to_content: true

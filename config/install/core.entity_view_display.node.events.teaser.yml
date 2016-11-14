@@ -5,21 +5,24 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.events.body
     - field.field.node.events.field_address
+    - field.field.node.events.field_card
     - field.field.node.events.field_contact_block_text
     - field.field.node.events.field_contact_email
     - field.field.node.events.field_contact_number
     - field.field.node.events.field_contact_person
+    - field.field.node.events.field_display_link
+    - field.field.node.events.field_gallery_image
     - field.field.node.events.field_hero_image
     - field.field.node.events.field_hero_image_caption
     - field.field.node.events.field_intro_text
-    - field.field.node.events.field_no_detail_page
+    - field.field.node.events.field_link
     - field.field.node.events.field_past_events
     - field.field.node.events.field_teaser
     - field.field.node.events.field_thumbnail
     - node.type.events
   module:
-    - aggregator
     - image
+    - link
     - panelizer
     - user
 third_party_settings:
@@ -33,7 +36,7 @@ targetEntityType: node
 bundle: events
 mode: teaser
 content:
-  field_no_detail_page:
+  field_display_link:
     type: boolean
     weight: 2
     label: above
@@ -42,11 +45,16 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-  field_teaser:
-    type: aggregator_xss
+  field_link:
+    type: link
     weight: 1
     label: above
-    settings: {  }
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
   field_thumbnail:
     type: image
@@ -59,13 +67,16 @@ content:
 hidden:
   body: true
   field_address: true
+  field_card: true
   field_contact_block_text: true
   field_contact_email: true
   field_contact_number: true
   field_contact_person: true
+  field_gallery_image: true
   field_hero_image: true
   field_hero_image_caption: true
   field_intro_text: true
   field_past_events: true
+  field_teaser: true
   links: true
   workbench_moderation_control: true

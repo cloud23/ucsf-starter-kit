@@ -4,19 +4,15 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.funds.body
-    - field.field.node.funds.field_category
-    - field.field.node.funds.field_display_whats_hot
     - field.field.node.funds.field_gallery_image
     - field.field.node.funds.field_giving_form_url
     - field.field.node.funds.field_hero_image
     - field.field.node.funds.field_hero_image_caption
     - field.field.node.funds.field_intro_text
-    - field.field.node.funds.field_microform_text
     - field.field.node.funds.field_no_detail_page
     - field.field.node.funds.field_stats
     - field.field.node.funds.field_tags
     - field.field.node.funds.field_teaser
-    - field.field.node.funds.field_text_link
     - field.field.node.funds.field_thumbnail
     - node.type.funds
   module:
@@ -71,19 +67,13 @@ content:
       url_type: ''
     third_party_settings: {  }
     type: image_url
-  workbench_moderation_control:
-    weight: -20
 hidden:
   body: true
-  field_category: true
-  field_display_whats_hot: true
   field_exte: true
   field_gallery_image: true
   field_hero_image: true
   field_hero_image_caption: true
   field_intro_text: true
-  field_microform_text: true
   field_stats: true
   field_tags: true
-  field_text_link: true
   links: true

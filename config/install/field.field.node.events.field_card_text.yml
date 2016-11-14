@@ -2,19 +2,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_intro_text
+    - field.storage.node.field_card_text
     - node.type.events
   module:
     - text
-id: node.events.field_intro_text
-field_name: field_intro_text
+id: node.events.field_card_text
+field_name: field_card_text
 entity_type: node
 bundle: events
-label: 'Intro Text'
+label: 'Card Text'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: text_long
+settings:
+  display_summary: false
+field_type: text_with_summary
