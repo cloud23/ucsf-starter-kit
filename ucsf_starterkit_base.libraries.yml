@@ -21,6 +21,7 @@ global-js:
     scripts/accordion-functions.js: {}
     scripts/hero-functions.js: {}
     scripts/homepage-background-functions.js: {}
+    scripts/touch-events-mobile.js: {}
   dependencies:
     - core/jquery
     - core/drupal.ajax

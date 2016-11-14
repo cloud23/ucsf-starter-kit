@@ -69,33 +69,9 @@
 
 
 {% block left_section %}
-    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-        <div class="column-wrapper">
-            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
-                {% if page.content %}
-                    <div class="block--wysiwyg">
-                        {{ page.content }}
-                    </div>
-                {% endif %}
-
-                {% if node.field_past_events %}
-                    <div class="block--past-events">
-                        {% for item in node.field_past_events %}
-                            <div class="event-images">
-                                {% include '@molecules/02-blocks/24-image-and-caption-single.twig' with {
-                                    "image" : file_url(item.entity.field_thumbnail.entity.uri.value),
-                                    "caption" : item.entity.field_hero_image_caption.value
-                                } %}
-                            </div>
-                        {% endfor%}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
-
-            </div>
-        </div>
-     </div>
+     {% if page.content %}
+        {{ page.content }}
+    {% endif %}
 {% endblock %}
 
 
