@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="contents--wrapper details-content--margin">
+  <div class="contents--wrapper">
     {% block top_section %}
       {% if node.field_hero_image.value %}
         {% set image = [{ 'background_image' : file_url(node.field_hero_image['0'].entity.uri.value) }] %}
