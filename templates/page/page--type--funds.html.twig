@@ -45,41 +45,43 @@
             {{ block('hero_image_caption') }}
         </div>
     {% endif %}
-    {% block microform %}
-        {% if node.field_giving_form_url.uri %}
-            <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-                {% set giving_amounts = [] %}
-                {% set prefix = node.field_gift_choice_amount.itemDefinition.settings.prefix %}
-
-                {% if node.field_gift_choice_amount is not empty %}
-                    {% for i in node.field_gift_choice_amount %}
-                        {% set label = prefix ~ i.value %}
-                        {% set selected = node.field_giving_form_default_value.value == loop.index ? true : false %}
-                        {% set giving_amount = { 'value' : i.value, 'label': label, 'is_checked' : selected } %}
-                        {% set giving_amounts = giving_amounts|merge([giving_amount]) %}
-                    {% endfor %}
-                {% else %}
-                    {% set giving_amounts = [
-                        {"label" : "$50", "value":50,  "is_checked":false },
-                        {"label" : "$100",  "value":100, "is_checked":true },
-                        {"label" : "$250", "value":250, "is_checked":false },
-                        {"label" : "$500", "value":500, "is_checked":false }
-                    ] %}
-                {% endif %}
-
-                {% include "@organisms/01-content-blocks/04-ways-to-give-small.twig" with {
-                    "class_controller" : "visible_always funds_side",
-                    "label": node.field_microform_text.value,
-                    "post_url" : node.field_giving_form_url.uri,
-                    "choice_name": "GiftChoice",
-                    "amount" : "Amount",
-                    "giving_amounts" : giving_amounts
-                } %}
-            </div>
-        {% endif %}
-    {% endblock %}
     {% if page.sidebar_right %}
         <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
+            <div class="column-wrapper">
+                {% block microform %}
+                    {% if node.field_giving_form_url.uri %}
+                        <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
+                            {% set giving_amounts = [] %}
+                            {% set prefix = node.field_gift_choice_amount.itemDefinition.settings.prefix %}
+
+                            {% if node.field_gift_choice_amount is not empty %}
+                                {% for i in node.field_gift_choice_amount %}
+                                    {% set label = prefix ~ i.value %}
+                                    {% set selected = node.field_giving_form_default_value.value == loop.index ? true : false %}
+                                    {% set giving_amount = { 'value' : i.value, 'label': label, 'is_checked' : selected } %}
+                                    {% set giving_amounts = giving_amounts|merge([giving_amount]) %}
+                                {% endfor %}
+                            {% else %}
+                                {% set giving_amounts = [
+                                    {"label" : "$50", "value":50,  "is_checked":false },
+                                    {"label" : "$100",  "value":100, "is_checked":true },
+                                    {"label" : "$250", "value":250, "is_checked":false },
+                                    {"label" : "$500", "value":500, "is_checked":false }
+                                ] %}
+                            {% endif %}
+
+                            {% include "@organisms/01-content-blocks/04-ways-to-give-small.twig" with {
+                                "class_controller" : "visible_always funds_side",
+                                "label": node.field_microform_text.value,
+                                "post_url" : node.field_giving_form_url.uri,
+                                "choice_name": "GiftChoice",
+                                "amount" : "Amount",
+                                "giving_amounts" : giving_amounts
+                            } %}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
             {{ page.sidebar_right }}
         </div>
     {% endif %}
