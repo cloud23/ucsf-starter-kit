@@ -17,3 +17,5 @@ scripts/
 scripts/*
 
 bower.json
+
+node_modules
