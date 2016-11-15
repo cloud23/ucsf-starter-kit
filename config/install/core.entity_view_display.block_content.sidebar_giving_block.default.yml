@@ -4,11 +4,11 @@ dependencies:
   config:
     - block_content.type.sidebar_giving_block
     - field.field.block_content.sidebar_giving_block.field_amount
-    - field.field.block_content.sidebar_giving_block.field_display_on_desktop_view
-    - field.field.block_content.sidebar_giving_block.field_display_on_mobile_view
+    - field.field.block_content.sidebar_giving_block.field_giving_form_default_value
     - field.field.block_content.sidebar_giving_block.field_post_url
   module:
     - link
+    - options
 id: block_content.sidebar_giving_block.default
 targetEntityType: block_content
 bundle: sidebar_giving_block
@@ -22,24 +22,12 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_display_on_desktop_view:
+  field_giving_form_default_value:
     weight: 2
     label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+    settings: {  }
     third_party_settings: {  }
-    type: boolean
-  field_display_on_mobile_view:
-    weight: 3
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
+    type: list_default
   field_post_url:
     weight: 0
     label: above
