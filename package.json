@@ -4,7 +4,9 @@
   "description": "Drupal 8 theme ",
   "main": "index.js",
   "scripts": {
-    "test": "ls"
+    "test": "ls",
+    "update": "npm install && grunt update",
+    "postinstall" : "grunt update"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,18 @@
     "theme"
   ],
   "author": "Norman Manantan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "install": "^0.8.2",
+    "npm": "^3.10.9",
+    "ucsf-pattern-library": "git+ssh://git@github.com/cloud23/ucsf-patternlab.git#master"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "load-grunt-config": "^0.19.2",
+    "time-grunt": "^1.4.0"
+  }
 }
