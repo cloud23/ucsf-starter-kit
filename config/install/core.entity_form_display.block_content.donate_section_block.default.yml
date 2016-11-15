@@ -6,6 +6,7 @@ dependencies:
     - field.field.block_content.donate_section_block.body
     - field.field.block_content.donate_section_block.field_amount
     - field.field.block_content.donate_section_block.field_background_image
+    - field.field.block_content.donate_section_block.field_giving_form_default_value
     - field.field.block_content.donate_section_block.field_other_ways_link
     - field.field.block_content.donate_section_block.field_post_url
   module:
@@ -39,6 +40,11 @@ content:
       preview_image_style: ''
       progress_indicator: throbber
     third_party_settings: {  }
+  field_giving_form_default_value:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_other_ways_link:
     weight: 9
     settings:

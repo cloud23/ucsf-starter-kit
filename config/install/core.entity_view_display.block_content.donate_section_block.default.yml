@@ -6,11 +6,13 @@ dependencies:
     - field.field.block_content.donate_section_block.body
     - field.field.block_content.donate_section_block.field_amount
     - field.field.block_content.donate_section_block.field_background_image
+    - field.field.block_content.donate_section_block.field_giving_form_default_value
     - field.field.block_content.donate_section_block.field_other_ways_link
     - field.field.block_content.donate_section_block.field_post_url
   module:
     - image
     - link
+    - options
     - text
 id: block_content.donate_section_block.default
 targetEntityType: block_content
@@ -39,6 +41,12 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_giving_form_default_value:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_other_ways_link:
     weight: 3
     label: above
