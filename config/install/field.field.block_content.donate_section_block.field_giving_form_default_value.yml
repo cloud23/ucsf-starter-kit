@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.donate_section_block
+    - field.storage.block_content.field_giving_form_default_value
+  module:
+    - options
+id: block_content.donate_section_block.field_giving_form_default_value
+field_name: field_giving_form_default_value
+entity_type: block_content
+bundle: donate_section_block
+label: 'Giving Form Default Value'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
