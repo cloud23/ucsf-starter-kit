@@ -1,0 +1,20 @@
+{
+  "name": "ucsf_starterkit_base",
+  "version": "1.0.0",
+  "description": "Drupal 8 theme ",
+  "main": "index.js",
+  "scripts": {
+    "test": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@favmed.unfuddle.com:favmed/ucsfdrupal.git"
+  },
+  "keywords": [
+    "drupal",
+    "theme",
+    "theme"
+  ],
+  "author": "Norman Manantan",
+  "license": "ISC"
+}
