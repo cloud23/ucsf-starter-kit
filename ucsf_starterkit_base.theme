@@ -93,6 +93,12 @@
         '#title' => t('Alert bar link'),
         '#default_value' => theme_get_setting('alert_bar_link'),
       );
+
+      $form['ucsf_starterkit_base_settings']['header_give_button'] = array(
+        '#type' => 'url',
+        '#title' => t('Header Give Button Link'),
+        '#default_value' => theme_get_setting('header_give_button'),
+      );
     }
 
     function ucsf_starterkit_base_preprocess_page(&$variables) {
@@ -114,6 +120,7 @@
       $variables['alert_bar_is_visible'] = (bool)theme_get_setting('alert_bar_is_visible', 'ucsf_starterkit_base');
       $variables['alert_bar'] = theme_get_setting('alert_bar', 'ucsf_starterkit_base');
       $variables['alert_bar_link'] = theme_get_setting('alert_bar_link', 'ucsf_starterkit_base');
+      $variables['header_give_button'] = theme_get_setting('header_give_button', 'ucsf_starterkit_base');
     }
 
     function ucsf_starterkit_base_theme_suggestions_block_alter(array &$suggestions, array $variables)
