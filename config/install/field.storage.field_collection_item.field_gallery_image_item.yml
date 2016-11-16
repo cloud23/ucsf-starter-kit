@@ -5,12 +5,8 @@ dependencies:
     - field_collection
     - file
     - image
-  config:
-    - node.type.stories
-    - node.type.funds
-  enforced:
-    theme:
-      - ucsf_starterkit_base
+_core:
+  default_config_hash: uH34d_Gk1qQMLqOCE_wA1WkS3QawV0op1g6CDjnE_5c
 id: field_collection_item.field_gallery_image_item
 field_name: field_gallery_image_item
 entity_type: field_collection_item

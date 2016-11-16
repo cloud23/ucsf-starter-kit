@@ -95,13 +95,17 @@ content:
     weight: 10
     label: above
     settings:
+      url_type: '1'
       image_style: ''
       image_link: ''
-      url_type: ''
     third_party_settings: {  }
     type: image_url
   links:
     weight: 9
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
     settings: {  }
     third_party_settings: {  }
 hidden: {  }

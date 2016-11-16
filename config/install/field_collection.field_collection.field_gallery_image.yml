@@ -1,5 +1,7 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies: { }
+_core:
+  default_config_hash: _MSbfjXtIN9gHCG8C_ngdSPwBNHX7nEisIsTfboA0js
 id: field_gallery_image
 label: field_gallery_image

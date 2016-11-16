@@ -2,10 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base   
+    - node  
 id: node.field_related_stories
 field_name: field_related_stories
 entity_type: node

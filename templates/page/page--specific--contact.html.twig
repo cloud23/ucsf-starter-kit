@@ -28,7 +28,9 @@
             } %}
             {% if page.content %}
                 <p class="body-text-medium-20">You can also leave a message using the contact form below.</p>
-                {{ page.content }}
+                <div class="block--wysiwyg">
+                    {{ page.content }}
+                </div>
             {% endif %}
         </div>
     </div>

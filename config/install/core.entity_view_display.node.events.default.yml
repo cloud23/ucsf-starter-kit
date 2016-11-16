@@ -4,16 +4,20 @@ dependencies:
   config:
     - field.field.node.events.body
     - field.field.node.events.field_address
+    - field.field.node.events.field_card
     - field.field.node.events.field_contact_block_text
     - field.field.node.events.field_contact_email
     - field.field.node.events.field_contact_number
     - field.field.node.events.field_contact_person
+    - field.field.node.events.field_display_link
+    - field.field.node.events.field_gallery_image
     - field.field.node.events.field_hero_image
     - field.field.node.events.field_hero_image_caption
     - field.field.node.events.field_intro_text
-    - field.field.node.events.field_no_detail_page
+    - field.field.node.events.field_link
     - field.field.node.events.field_past_events
     - field.field.node.events.field_teaser
+    - field.field.node.events.field_text_link
     - field.field.node.events.field_thumbnail
     - node.type.events
   module:
@@ -37,15 +41,6 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-  field_no_detail_page:
-    weight: 1
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
   field_teaser:
     weight: 2
     label: above
@@ -53,15 +48,26 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_text_link:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
 hidden:
   field_address: true
+  field_card: true
   field_contact_block_text: true
   field_contact_email: true
   field_contact_number: true
   field_contact_person: true
+  field_display_link: true
+  field_gallery_image: true
   field_hero_image: true
   field_hero_image_caption: true
   field_intro_text: true
+  field_link: true
   field_past_events: true
   field_thumbnail: true
   links: true

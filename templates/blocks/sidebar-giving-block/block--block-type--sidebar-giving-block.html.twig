@@ -1,19 +1,27 @@
-{% extends "@organisms/01-content-blocks/04-ways-to-give-small.twig" %}
+{% set giving_amounts = [] %}
+{% set prefix = content.field_amount['#items'].itemDefinition.settings.prefix %}
 
-{% block classes %}
-    {% if (content.field_display_on_desktop_view['#items'].value == 1) and (content.field_display_on_mobile_view['#items'].value == 1) %}
-        visible_always
-    {% elseif content.field_display_on_desktop_view['#items'].value == 1 and  content.field_display_on_mobile_view['#items'].value == 0 %}
-        sidebar
-    {% endif %}
-{% endblock %}
+{% if content.field_amount['#items'] is not empty %}
+    {% for i in content.field_amount['#items'] %}
+        {% set gift_choice_label = prefix ~ i.value %}
+        {% set selected = content.field_giving_form_default_value['#items'].value == loop.index ? true : false %}
+        {% set gift_choice_amount = { 'value' : i.value, 'label': gift_choice_label, 'is_checked' : selected } %}
+        {% set giving_amounts = giving_amounts|merge([gift_choice_amount]) %}
+    {% endfor %}
+{% else %}
+    {% set giving_amounts = [
+        {"label" : "$50", "value":50,  "is_checked":false },
+        {"label" : "$100",  "value":100, "is_checked":true },
+        {"label" : "$250", "value":250, "is_checked":false },
+        {"label" : "$500", "value":500, "is_checked":false }
+    ] %}
+{% endif %}
 
-{% block label %}
-    <h4>{{ label }}</h4>
-{% endblock %}
-
-{% block post_url %}{{ content.field_post_url['0']['#title'] }}{% endblock %}
-
-{# block amounts #}
-    {# content.field_amount #}
-{# endblock #}
+{% include "@organisms/01-content-blocks/04-ways-to-give-small.twig" with {
+    "class_controller" : "visible_always",
+    "label": label,
+    "post_url" : content.field_post_url['#items'].uri,
+    "choice_name": "GiftChoice",
+    "amount" : "Amount",
+    "giving_amounts" : giving_amounts
+} %}

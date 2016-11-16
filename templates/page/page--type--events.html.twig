@@ -25,7 +25,7 @@
         <div class="column-wrapper">
             <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
                 {% if page.breadcrumb %}
-                    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12"> 
+                    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
                         {{ page.breadcrumb }}
                     </div>
                 {% endif %}
@@ -43,7 +43,7 @@
         </div>
     </div>
     {% if node.field_hero_image %}
-        {% include "@molecules/02-blocks/08-article-hero-no-text.twig" with { 
+        {% include "@molecules/02-blocks/08-article-hero-no-text.twig" with {
             image: file_url(node.field_hero_image.entity.uri.value)
         }%}
     {% endif%}
@@ -69,31 +69,9 @@
 
 
 {% block left_section %}
-    <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
-        <div class="column-wrapper">
-            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
-                {% if page.content %}
-                    {{ page.content }}
-                {% endif %}
-                
-                {% if node.field_past_events %}
-                    <div class="block--past-events">
-                        {% for item in node.field_past_events %}
-                            <div class="event-images">
-                                {% include '@molecules/02-blocks/24-image-and-caption-single.twig' with {
-                                    "image" : file_url(item.entity.field_thumbnail.entity.uri.value),
-                                    "caption" : item.entity.field_hero_image_caption.value
-                                } %}
-                            </div>
-                        {% endfor%}
-                    </div>
-                {% endif %}
-            </div>
-            <div class="column-large-10 column-medium-12 column-small-12 column-xsmall-12">
-
-            </div>
-        </div>
-     </div>
+     {% if page.content %}
+        {{ page.content }}
+    {% endif %}
 {% endblock %}
 
 
@@ -103,7 +81,7 @@
             {{ block('hero_image_caption') }}
         </div>
     {% endif %}
-    
+
     <div class="column-large-12 column-medium-12 column-small-12 column-xsmall-12">
          {% include "@molecules/02-blocks/05-block-contact-us.twig" with {
             "title" : node.field_contact_block_text.value,
@@ -116,5 +94,5 @@
             {{ page.sidebar_right }}
         {% endif %}
     </div>
-    
+
 {% endblock %}

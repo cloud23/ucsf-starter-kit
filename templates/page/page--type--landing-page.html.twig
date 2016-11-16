@@ -49,13 +49,13 @@
 
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
-        'logo' : mobile_logo,
-        'logo_box' : header_logo,
+        'logo' :directory ~ '/images/UCSF_logo_white_RGB.svg',
+        'logo_box' :  directory ~ '/images/UCSF_logobox_navy_RGB.svg',
         'site_slogan' : site.slogan,
-        'site_name': site.name
+        'site_name': site.name,
+        'header_give_button' : header_give_button
     } %}
 {% endblock %}
-
 {% block content %}
   <div class="contents--wrapper">
     {% block top_section %}
@@ -87,8 +87,20 @@
       {% endif %}
     {% endblock %}
     {% block middle_section %}
-      {% if page.content %}
-        {{ page.content }}
+      {% if node.field_page_display.value == "0" %}
+        {% if node.body.value is not empty %}
+          <div class="content-area page-body">
+            <div class="column-wrapper">
+              <div class="column-xsmall-12 column-small-12 column-medium-12 column-large-12">
+                {{ node.body.value | raw }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% else %}
+        {% if page.content %}
+          {{ page.content }}
+        {% endif %}
       {% endif %}
     {% endblock %}
     {% block bottom_section %}
@@ -101,6 +113,6 @@
 
 {% block footer %}
     {% include directory ~ '/templates/includes/footer.html.twig' with {
-      'logo' : footer_logo
+      'logo' : directory ~ '/images/UCSF_logobox_white.png'
     } %}
-{% endblock%}
+{% endblock %}

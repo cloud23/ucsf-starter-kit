@@ -1,4 +1,4 @@
-{% extends "@organisms/01-content-blocks/05-impact-stories-pillar.twig" %}
+{# extends "@organisms/01-content-blocks/05-impact-stories-pillar.twig" #}
 
 {% set stats = [] %}
 
@@ -16,9 +16,13 @@
 {% endif %}
 
 {% for i in content.field_stats %}
-    {% set stat_item = {'value' : i['#field_collection_item'].field_stat_value.value, 'text': i['#field_collection_item'].field_stat_text.value } %}
-    {% set stats = stats|merge([stat_item])%}
+    {% if i["#theme"] == "field_collection_item" %}
+        {% set stat_item = {'value' : i['#field_collection_item'].field_stat_value.value, 'text': i['#field_collection_item'].field_stat_text.value } %}
+        {% set stats = stats|merge([stat_item])%}
+    {% endif %}
+
 {% endfor %}
+
 
 {% block impact_of_giving_image %}
     {% include "@molecules/02-blocks/04-impact-story-with-image.twig" with {
@@ -40,7 +44,7 @@
 
 {% block related_story %}
     {% include "@molecules/02-blocks/02-impact-stories-block.twig" with {
-        "color" : color, 
+        "color" : color,
         "link" : path('entity.node.canonical', {'node': content.field_related_stories['0']['#node'].nid.value}),
         "title" : content.field_related_stories['0']['#node'].title.value,
         "image_url" : file_url(content.field_related_stories['0']['#node'].field_thumbnail.entity.uri.value),

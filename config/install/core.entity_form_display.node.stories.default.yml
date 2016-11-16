@@ -16,9 +16,55 @@ dependencies:
   module:
     - entity_browser
     - field_collection
+    - field_group
     - path
     - text
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_page_content:
+      children:
+        - field_intro_text
+        - body
+        - field_gallery_image
+        - field_stats
+        - field_category
+        - field_tags
+      parent_name: ''
+      weight: 3
+      label: 'Page Content'
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_hero_image_section:
+      children:
+        - field_hero_image
+        - field_hero_image_caption
+      parent_name: ''
+      weight: 2
+      label: 'Hero Image Section'
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_block_options:
+      children:
+        - field_thumbnail
+        - field_sub_title
+      parent_name: ''
+      weight: 1
+      label: 'Block Options'
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 _core:
   default_config_hash: n139yTuJYNZYS_p9WToXYg3Au_nSVv3gEwTSfYca0xA
 id: node.stories.default
@@ -28,7 +74,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -36,16 +82,16 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 13
+    weight: 6
     settings: {  }
     third_party_settings: {  }
   field_category:
-    weight: 9
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
   field_gallery_image:
-    weight: 7
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
@@ -69,26 +115,26 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_intro_text:
-    weight: 2
+    weight: 3
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
   field_stats:
-    weight: 8
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
   field_sub_title:
-    weight: 1
+    weight: 6
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
   field_tags:
-    weight: 10
+    weight: 8
     settings:
       match_operator: CONTAINS
       size: 60
@@ -97,29 +143,29 @@ content:
     type: entity_reference_autocomplete_tags
   field_thumbnail:
     type: entity_browser_file
-    weight: 4
+    weight: 5
     settings:
       entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
+      field_widget_remove: '1'
       selection_mode: selection_append
+      view_mode: default
+      field_widget_edit: 0
+      open: 0
+      preview_image_style: thumbnail
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   promote:
     type: options_buttons
-    weight: 14
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   sticky:
     type: options_buttons
-    weight: 15
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   title:
@@ -131,7 +177,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete_tags
-    weight: 12
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

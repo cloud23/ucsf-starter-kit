@@ -73,9 +73,9 @@ content:
     weight: 1
     label: visually_hidden
     settings:
-      image_link: ''
-      url_type: ''
+      url_type: '1'
       image_style: ''
+      image_link: ''
     third_party_settings: {  }
   field_hero_image_caption:
     type: string
@@ -137,13 +137,17 @@ content:
     weight: 2
     label: visually_hidden
     settings:
+      url_type: '1'
       image_style: ''
       image_link: ''
-      url_type: ''
     third_party_settings: {  }
     type: image_url
   links:
     weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  workbench_moderation_control:
+    weight: -20
     settings: {  }
     third_party_settings: {  }
 hidden:

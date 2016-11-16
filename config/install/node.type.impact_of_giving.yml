@@ -3,9 +3,6 @@ status: true
 dependencies:
   module:
     - menu_ui
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 third_party_settings:
   menu_ui:
     available_menus:

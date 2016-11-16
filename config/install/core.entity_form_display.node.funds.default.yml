@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.funds.field_category
     - field.field.node.funds.field_display_whats_hot
     - field.field.node.funds.field_gallery_image
+    - field.field.node.funds.field_gift_choice_amount
+    - field.field.node.funds.field_giving_form_default_value
     - field.field.node.funds.field_giving_form_url
     - field.field.node.funds.field_hero_image
     - field.field.node.funds.field_hero_image_caption
@@ -33,7 +35,7 @@ third_party_settings:
         - field_hero_image
         - field_hero_image_caption
       parent_name: ''
-      weight: 5
+      weight: 3
       label: 'Hero Image Section'
       format_type: fieldset
       format_settings:
@@ -48,9 +50,8 @@ third_party_settings:
         - field_gallery_image
         - field_stats
         - field_tags
-        - field_category
       parent_name: ''
-      weight: 6
+      weight: 4
       label: 'Page Content'
       format_type: fieldset
       format_settings:
@@ -65,7 +66,7 @@ third_party_settings:
         - field_text_link
         - field_display_whats_hot
       parent_name: ''
-      weight: 3
+      weight: 1
       label: 'Block Options'
       format_type: fieldset
       format_settings:
@@ -77,9 +78,11 @@ third_party_settings:
       children:
         - field_microform_text
         - field_giving_form_url
+        - field_gift_choice_amount
+        - field_giving_form_default_value
         - field_no_detail_page
       parent_name: ''
-      weight: 4
+      weight: 2
       label: 'Giving Form Options'
       format_type: fieldset
       format_settings:
@@ -104,16 +107,8 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 6
     settings: {  }
-    third_party_settings: {  }
-  field_category:
-    type: entity_reference_autocomplete_tags
-    weight: 11
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_display_whats_hot:
     weight: 6
@@ -133,6 +128,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: field_collection_embed
+  field_gift_choice_amount:
+    weight: 28
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_giving_form_default_value:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
   field_giving_form_url:
     type: link_default
     weight: 27
@@ -174,7 +180,7 @@ content:
     third_party_settings: {  }
     type: string_textfield
   field_no_detail_page:
-    weight: 28
+    weight: 30
     settings:
       display_label: true
     third_party_settings: {  }
@@ -220,17 +226,17 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   promote:
     type: options_buttons
-    weight: 9
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   sticky:
     type: options_buttons
-    weight: 10
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   title:
@@ -242,10 +248,11 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete_tags
-    weight: 11
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_category: true

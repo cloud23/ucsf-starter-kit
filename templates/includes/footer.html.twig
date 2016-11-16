@@ -1,7 +1,7 @@
 {% extends "@organisms/00-global/footer.twig" %}
 
 {% block footer_logo %}
-    <img src="{{ footer_logo }}" alt="UCSF" class="footer--logo" />
+    <img src="{{ logo }}" alt="UCSF" class="footer--logo" />
 {% endblock %}
 
 {% block left_section %}
@@ -11,8 +11,8 @@
     </div>
     <div class="footer--column-links">
         <ul class="list--unstyled">
-            <li><a href="#">UCSF Magazine</a></li>
-            <li><a href="#">UCSF Alumni</a></li>
+            <li><a href="http://giving.ucsf.edu/magazine" target="_blank">UCSF Magazine</a></li>
+            <li><a href="http://www.ucsfalumni.org/" target="_blank">UCSF Alumni</a></li>
         </ul>     
     </div>
 {% endblock %}
@@ -46,7 +46,7 @@
 
         {% block address_section %}
         <p>
-            {{ address }}
+            {{ address | raw}}
         </p>
         {% endblock %}
         {% block tax_number_id %}
@@ -55,10 +55,10 @@
     </div>
     <div class="footer--social-links">
         <div class="footer--social-link-item">
-            <a href="{{ facebook_url }}"><i class="fa fa-facebook-official"></i></a>
+            <a href="{{ facebook_url }}" target="_blank"><i class="fa fa-facebook-official"></i></a>
         </div>
         <div class="footer--social-link-item">
-            <a href="{{ twitter_url }}">
+            <a href="{{ twitter_url }}" target="_blank">
                 <i class="fa fa-twitter"></i>
             </a>
         </div>

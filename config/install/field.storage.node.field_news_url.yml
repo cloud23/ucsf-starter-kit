@@ -4,9 +4,6 @@ dependencies:
   module:
     - link
     - node
-  enforced:
-    theme:
-      - ucsf_starterkit_base
 id: node.field_news_url
 field_name: field_news_url
 entity_type: node
