@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: full_width_giving_form
-label: 'Simple Full Width Giving Form'
-revision: 1
-description: ''

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: sidebar_giving_block
-label: 'Sidebar Donate block'
-revision: 1
-description: ''

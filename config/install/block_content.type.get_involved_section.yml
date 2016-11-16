@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: get_involved_section
-label: 'Get Involved Block'
-revision: 1
-description: ''

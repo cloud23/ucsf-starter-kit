@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: three_column_block_with_photo
-label: 'Three Column Block with Photo'
-revision: 1
-description: ''
