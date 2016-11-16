@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: donate_section_block
-label: 'Donate Section Block'
-revision: 1
-description: ''

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: simple_header_and_content_block
-label: 'Simple Header and Content Block'
-revision: 1
-description: ''
