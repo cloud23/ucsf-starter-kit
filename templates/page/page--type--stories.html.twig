@@ -2,8 +2,8 @@
 
 {% block header %}
     {% include directory ~ '/templates/includes/header.html.twig' with {
-        'logo' : mobile_logo,
-        'logo_box' : header_logo,
+        'logo' :directory ~ '/images/UCSF_logo_white_RGB.svg',
+        'logo_box' :  directory ~ '/images/UCSF_logobox_navy_RGB.svg',
         'site_slogan' : site.slogan,
         'site_name': site.name,
         'header_give_button' : header_give_button
@@ -82,6 +82,6 @@
 
 {% block footer %}
     {% include directory ~ '/templates/includes/footer.html.twig' with {
-      'logo' : footer_logo
+      'logo' : directory ~ '/images/UCSF_logobox_white.png'
     } %}
 {% endblock %}
